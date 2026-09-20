@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangle Quest - Level 1</title>
+    <link rel="stylesheet" href="level1style.css">
+</head>
+
+<body>
+
+<header class="level-topbar">
+    <a href="index.html" class="back-button">← HOME</a>
+
+    <div class="level-title">
+        <span>TRIANGLE QUEST</span>
+        <h1>LEVEL 1</h1>
+    </div>
+
+    <div class="player-stats">
+        <div class="mini-stat"> <img src="coin.png"> <span id="coins">100</span></div>
+        <div class="mini-stat"><img src="level.png"> <span id="xp">0</span> XP</div>
+        <div class="mini-stat"><img src="energy.png"> <span id="cp">0</span> CP</div>
+    </div>
+</header>
+
+<main class="level-layout">
+
+    <!-- =========================
+         LEFT SIDEBAR
+    ========================== -->
+    <aside class="learning-sidebar">
+
+        <div class="sidebar-title">
+            <span><img src=quest.png></span>
+            <div>
+                <small>LEVEL 1</small>
+                <h2>Learning Path</h2>
+            </div>
+        </div>
+
+        <div class="objectives">
+            <h3><img src="target.png"> Learning Objectives</h3>
+
+            <div class="objective">
+                <span class="objective-check">○</span>
+                <p id="sidebarObjective1">
+                    State and explain the Side-Side-Side (SSS) Similarity Theorem.
+                </p>
+            </div>
+
+            <div class="objective">
+                <span class="objective-check">○</span>
+                <p id="sidebarObjective2">
+                    Identify and calculate the ratios of corresponding 
+                    side lengths to establish proportionality between two triangles.
+
+                </p>
+            </div>
+
+            <div class="objective">
+                <span class="objective-check">○</span>
+                <p id="sidebarObjective3">
+                    Use SSS Similarity Theorem to prove that
+                    two triangles are similar and solve for the ratios of triangles.
+                </p>
+            </div>
+        </div>
+
+
+    
+        <div class="progress-box">
+            <div class="progress-heading">
+                <span>LEVEL PROGRESS</span>
+                <strong id="progressText">0%</strong>
+            </div>
+
+            <div class="level-progress-bar">
+                <div id="levelProgress" class="level-progress-fill"></div>
+            </div>
+
+            <p>Complete all five parts to finish Level 1!</p>
+        </div>
+
+        <!-- Five Parts -->
+        <div class="part-list">
+
+            <button class="part-item active" id="partNav1" onclick="openPart(1)">
+                <span class="part-number">1</span>
+                <div>
+                    <strong>SSS</strong>
+                    <small id="partStatus1">Current Quest</small>
+                </div>
+            </button>
+
+            <button class="part-item locked" id="partNav2" onclick="openPart(2)">
+                <span class="part-number">2</span>
+                <div>
+                    <strong>AA</strong>
+                    <small id="partStatus2">🔒 Locked</small>
+                </div>
+            </button>
+
+            <button class="part-item locked" id="partNav3" onclick="openPart(3)">
+                <span class="part-number">3</span>
+                <div>
+                    <strong>SAS</strong>
+                    <small id="partStatus3">🔒 Locked</small>
+                </div>
+            </button>
+
+            <button class="part-item locked" id="partNav4" onclick="openPart(4)">
+                <span class="part-number">4</span>
+                <div>
+                    <strong>RTS</strong>
+                    <small id="partStatus4">🔒 Locked</small>
+                </div>
+            </button>
+
+            <button class="part-item locked" id="partNav5" onclick="openPart(5)">
+                <span class="part-number">5</span>
+                <div>
+                    <strong>SRT</strong>
+                    <small id="partStatus5">🔒 Locked</small>
+                </div>
+            </button>
+
+        </div>
+
+        <div class="mini-note">
+            💡 <strong>Quest Rule:</strong>
+            Finish Learn → Example → Practice → Application before the next part unlocks.
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <section class="learning-content">
+
+        <!-- =========================================
+             PART 1 — SSS
+        ========================================== -->
+        <section class="part-page active-part" id="part1">
+
+            <div class="part-banner">
+                <div>
+                    <span>PART 1 OF 5</span>
+                    <h1>SSS</h1>
+                    <p>Side-Side-Side</p>
+                </div>
+                <div class="part-icon">1</div>
+            </div>
+
+            <div class="stage-tabs">
+                <button class="stage-tab active" id="p1stageTab1">1. Learn</button>
+                <button class="stage-tab" id="p1stageTab2">2. Example</button>
+                <button class="stage-tab" id="p1stageTab3">3. Practice</button>
+                <button class="stage-tab" id="p1stageTab4">4. Application</button>
+            </div>
+
+            <!-- SSS LEARN -->
+            <section class="stage active-stage" id="p1stage1">
+                <div class="stage-badge">STAGE 1 — LEARN</div>
+                <h2>Learn SSS</h2>
+                <p class="stage-introduction">Lesson Proper and Visual Representation</p>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">01</span>
+                        <div>
+                            <span class="lesson-type">POSTULATE / RULE</span>
+                            <h3>SSS Postulate</h3>
+                        </div>
+                    </div>
+
+                    <div class="lesson-image">
+                        <img src="SSS.jpg" alt="SSS">
+                    </div>
+
+                    <div class="definition-box">
+                        <h3>📖 Definition</h3>
+                        <p>
+                            The Side-Side-Side (SSS) Similarity Theorem states 
+                            that if the three pairs of corresponding sides 
+                            of two triangles are proportional, then the two triangles are similar.
+                        </p>
+                    </div>
+
+                    <div class="notes-box">
+                        <h3>📝 Important Notes</h3>
+                        <p>
+                            AY/UN = DA/FU = DY/FN 
+                            Therefore SSS Similarity Theorem we can conclude that △DAY and △FUN are similar.
+                        </p>
+                    </div>
+                </div>
+
+                <button class="next-button" onclick="goToStage(1, 2)">
+                    CONTINUE TO EXAMPLE →
+                </button>
+            </section>
+
+            <!-- SSS EXAMPLE -->
+            <section class="stage" id="p1stage2">
+                <div class="stage-badge">🔎 STAGE 2 — EXAMPLE</div>
+                <h2>SSS Step-by-Step Example</h2>
+                <p class="stage-introduction">
+                    Problem: Given that m∠AB = 2 and m∠AC = 4 m∠BC = 3, m∠XY = 4, 
+                    and m∠XZ = 8 m∠YZ = 6. Determine if the triangles are similar
+                     using SSS Similarity Theorem.
+                </p>
+
+                <div class="example-image">
+                    <img src="examplesss.jpg" alt="SSS Example">
+                </div>
+
+                <div class="worked-example">
+            <div class="example-step">
+                        <span>1</span>
+                        <div>
+                            <h3>List down the side lengths in order
+                    </h3>
+                    <p>(From shortest to longest)
+                    m∠AB = 2 
+                    m∠BC = 3
+                    m∠AC = 4 
+                    m∠XY = 4
+                    m∠YZ = 6
+                    </p>
+                </div>
+            </div>
+                <div class="example-step"><span>2</span>
+                    <div>
+                        <h3>
+                            Match the corresponding sides
+                        </h3>
+                        <p>
+                            Match the shortest side to shortest side
+                            Match the medium side to medium side
+                            Match the longest side to longest side
+                            AB/XY = BC/YZ = AC/XZ or 2/4 = 3/6 = 4/8 
+
+                        </p>
+                    </div>
+                </div>
+                    <div class="example-step">
+                        <span>3</span>
+                        <div>
+                            <h3>
+                                Simplify each fraction if the fraction can be simplified
+                            </h3>
+                            <p>
+                                1/2 = 1/2 = 1/2 
+                            </p>
+                        </div>
+                    </div>
+                    <div class="example-step">
+                        <span>4</span>
+                        <div>
+                            <h3>
+                                Compare if three simplified fractions have the same value
+                            </h3>
+                            <p>
+                                1/2 = 1/2 = 1/2
+                            </p>
+                        </div>
+                    </div>
+                    <div class="example-step">
+                        <span>5</span>
+                        <div>
+                            <h3>
+                                 Conclude if two triangles are similar
+                            </h3>
+                            <p>
+                                Using SSS Similarity Theorem we can now conclude that
+                                two triangles are similar, since it satisfies the 
+                                requirement that three pairs of corresponding 
+                                sides of two triangles are proportional, 
+                                then the two triangles are similar.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="previous-button" onclick="goToStage(1, 1)">← BACK</button>
+                    <button class="next-button" onclick="goToStage(1, 3)">TRY PRACTICE →</button>
+                </div>
+            </section>
+
+            <!-- SSS PRACTICE -->
+            <section class="stage" id="p1stage3">
+                <div class="stage-badge">🎮 STAGE 3 — PRACTICE</div>
+                <h2>SSS Practice Arena</h2>
+                <p class="stage-introduction">Complete the practice questions.</p>
+                <div class="question-box"><h2>Question: In △ABC, m∠AB = 5, m∠BC= 7, and m∠AC = 9 . In △DEF, m∠DE = 18, m∠EF = 9, and m∠DF = 14.
+</h2></div>
+
+                <div id="practiceCards1"></div>
+
+                <div class="practice-complete" id="practiceComplete1">
+                    🎉 All SSS practices completed!<br>
+                    You can now enter the SSS Application.
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="previous-button" onclick="goToStage(1, 2)">← BACK</button>
+                    <button class="next-button" id="applicationButton1" onclick="goToStage(1, 4)" disabled>
+                        GO TO APPLICATION →
+                    </button>
+                </div>
+            </section>
+
+            <!-- SSS APPLICATION -->
+            <section class="stage" id="p1stage4">
+                <div class="stage-badge">🏆 STAGE 4 — APPLICATION</div>
+                <h2>SSS Quest Challenge</h2>
+                <p class="stage-introduction">Use what you learned to solve the final SSS challenge.</p>
+
+                <div class="application-image">
+                    <img src="applicationsss.png" alt="SSS Application">
+                </div>
+
+                <div class="application-card">
+                    <h3> SSS Final Challenge</h3>
+                    <p>
+                        Question<br>
+
+                        Using the SSS Similarity Theorem, determine whether Truss A and Truss B are similar.<br>
+
+                        Show the three ratios of the corresponding sides:<br>
+
+                        5/10 = ____<br>
+
+                        7/14 = ____<br>
+
+                        9/18 = ____<br>
+
+                        Then answer:<br>
+
+                        Are the two triangular trusses similar?<br>
+
+                        A. Yes, they are similar.<br>
+                        B. No, they are not similar. <br>
+                    </p>
+                
+
+                    <input id="applicationAnswer1" type="text" placeholder="Enter your answer...">
+                    <button onclick="completePart(1)">COMPLETE SSS QUEST</button>
+                    <div class="feedback" id="applicationFeedback1"></div>
+                </div>
+
+                <div class="part-complete" id="partComplete1">
+                    <div class="complete-icon">🏆</div>
+                    <h2>SSS COMPLETE!</h2>
+                    <p>You completed Part 1.</p>
+                    <div class="rewards">
+                        <span><Img src="level.png"> +20 XP</span>
+                        <span><img src="coins.png"> +20 Coins</span>
+                        <span><img src="energy.png"> +10 CP</span>
+                    </div>
+                    <button class="next-button" onclick="openPart(2)">UNLOCK AA →</button>
+                </div>
+            </section>
+        </section>
+
+
+        <!-- =========================================
+             PART 2 — AA
+        ========================================== -->
+        <section class="part-page" id="part2">
+
+            <div class="part-banner">
+                <div>
+                    <span>PART 2 OF 5</span>
+                    <h1>AA</h1>
+                    <p>Angle-Angle</p>
+                </div>
+                <div class="part-icon">2</div>
+            </div>
+
+            <div class="stage-tabs">
+                <button class="stage-tab active" id="p2stageTab1">1. Learn</button>
+                <button class="stage-tab" id="p2stageTab2">2. Example</button>
+                <button class="stage-tab" id="p2stageTab3">3. Practice</button>
+                <button class="stage-tab" id="p2stageTab4">4. Application</button>
+            </div>
+
+            <section class="stage active-stage" id="p2stage1">
+                <div class="stage-badge">📚 STAGE 1 — LEARN</div>
+                <h2>Learn AA</h2>
+                <p class="stage-introduction">Lesson Proper and Visual Representation
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">02</span>
+                        <div>
+                            <span class="lesson-type">THEOREM</span>
+                            <h3>AA Theorem</h3>
+                        </div>
+                    </div>
+                    <div class="lesson-image"><img src="aa.jpg" alt="AA"></div>
+                    <div class="definition-box">
+                        <h3>📖 Definition</h3>
+                        <p>The Angle-Angle S (AA) Similarity Theorem states that if two angles of one triangle are congruent to two angles of another triangle, then the two triangles are similar.</p>
+                    </div>
+                    <div class="notes-box">
+                        <h3>📝 Important Notes</h3>
+                        <p>
+                            ∠A ≅ ∠D
+                            ∠B ≅ ∠E
+                            Using AA Similarity Theorem we can conclude that △ABC and △DEF are similar.
+                        </p>
+                    </div>
+                </div>
+
+                <button class="next-button" onclick="goToStage(2, 2)">CONTINUE TO EXAMPLE →</button>
+            </section>
+
+            <section class="stage" id="p2stage2">
+                <div class="stage-badge">🔎 STAGE 2 — EXAMPLE</div>
+                <h2>AA Step-by-Step Example</h2>
+                <p class="stage-introduction">Step-by-Step Worked Example</p>
+
+                <div class="example-image"><img src="exampleaa.png" alt="AA Example"></div>
+
+                <div class="worked-example">
+                    <div class="example-step"><span>1</span><div><h3>Find the missing angles using triangle sum theorem</h3><p>△PQR = 180°
+                        △XYZ = 180°<br>
+                        m∠P and m∠Q = 60 + 70 = 130°<br>
+
+                        To find the m∠R, subtract 180° to the sum of m∠P and m∠<br>
+
+                        m∠R = 180 - 130 = 50°<br>
+
+                        m∠X and m∠Z = 60 + 50 = 110°<br>
+
+                        To find the m∠Y, subtract 180° to the sum of m∠X and m∠Y<br>
+
+                        m∠Y = 180 - 110 = 70°<br>
+                        </p></div></div>
+                    <div class="example-step"><span>2</span><div><h3>Compare the angles of two triangles</h3></div></div>
+                    <div class="example-step"><span>3</span><div><h3>Find the first pair of equal angles
+                    Look for angles that have the same degrees.
+                    </h3><p>m∠P = m∠X</p></div></div>
+                    <div class="example-step"><span>4</span><div><h3>Find the second pair of equal angles
+                    Look for a second set of angles that have the same degrees.
+                    </h3><p>m∠Q = m∠Y
+                    </p></div></div>
+                    <div class="example-step"><span>5</span><div><h3>CConclude if two triangles are similar
+</h3><p>Using AA Similarity Theorem we can now conclude that two triangles are similar, since it satisfies the requirement that one triangle are congruent to two angles of another triangle. 
+</p></div></div>
+
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="previous-button" onclick="goToStage(2, 1)">← BACK</button>
+                    <button class="next-button" onclick="goToStage(2, 3)">TRY PRACTICE →</button>
+                </div>
+            </section>
+
+            <section class="stage" id="p2stage3">
+                <div class="stage-badge">🎮 STAGE 3 — PRACTICE</div>
+                <h2>AA Practice Arena</h2>
+                <p class="stage-introduction">Complete all three practice questions.</p>
+                <div class="question-box"><h2>Question: In △ABC, m∠A = 60° and m∠B = 81°. In △DEF, m∠D = 40° and m∠E = 81°.</h2>
+                <div id="practiceCards2"></div>
+                <div class="practice-complete" id="practiceComplete2">
+                    🎉 All AA practices completed!<br>
+                    You can now enter the AA Application.
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="previous-button" onclick="goToStage(2, 2)">← BACK</button>
+                    <button class="next-button" id="applicationButton2" onclick="goToStage(2, 4)" disabled>
+                        GO TO APPLICATION →
+                    </button>
+                </div>
+            </section>
+
+            <section class="stage" id="p2stage4">
+                <div class="stage-badge">🏆 STAGE 4 — APPLICATION</div>
+                <h2>AA Quest Challenge</h2>
+                <p class="stage-introduction">Use what you learned to solve the final AA challenge.</p>
+
+                <div class="application-image"><img src="applicationaa.png" alt="AA Application"></div>
+
+                <div class="application-card">
+                    <h3>⚔️ AA Final Challenge</h3>
+                    <p>Question: Using AA Similarity Theorem, what is the height of the post?<br>
+
+                        A. 5 meters<br>
+                        B. 10 meters<br>
+                        C. 12 meters<br>
+                        D. 20 meters</p>
+                    <input id="applicationAnswer2" type="text" placeholder="Enter your answer...">
+                    <button onclick="completePart(2)">COMPLETE AA QUEST</button>
+                    <div class="feedback" id="applicationFeedback2"></div>
+                </div>
+
+                <div class="part-complete" id="partComplete2">
+                    <div class="complete-icon">🏆</div>
+                    <h2>AA COMPLETE!</h2>
+                    <p>You completed Part 2.</p>
+                    <div class="rewards">
+                        <span>⭐ +20 XP</span>
+                        <span>🪙 +20 Coins</span>
+                        <span>⚡ +10 CP</span>
+                    </div>
+                    <button class="next-button" onclick="openPart(3)">UNLOCK SAS →</button>
+                </div>
+            </section>
+        </section>
+
+
+        <!-- =========================================
+             PART 3 — SAS
+        ========================================== -->
+        <section class="part-page" id="part3">
+
+            <div class="part-banner">
+                <div>
+                    <span>PART 3 OF 5</span>
+                    <h1>SAS</h1>
+                    <p>Side-Angle-Side</p>
+                </div>
+                <div class="part-icon">3</div>
+            </div>
+
+            <div class="stage-tabs">
+                <button class="stage-tab active" id="p3stageTab1">1. Learn</button>
+                <button class="stage-tab" id="p3stageTab2">2. Example</button>
+                <button class="stage-tab" id="p3stageTab3">3. Practice</button>
+                <button class="stage-tab" id="p3stageTab4">4. Application</button>
+            </div>
+
+            <section class="stage active-stage" id="p3stage1">
+                <div class="stage-badge">📚 STAGE 1 — LEARN</div>
+                <h2>Learn SAS</h2>
+                <p class="stage-introduction">Lesson Proper and Visual Representation.</p>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">03</span>
+                        <div>
+                            <span class="lesson-type">POSTULATE / RULE</span>
+                            <h3>SAS Postulate</h3>
+                        </div>
+                    </div>
+                    <div class="lesson-image"><img src="sas.png" alt="SAS"></div>
+                    <div class="definition-box">
+                        <h3>📖 Definition</h3>
+                        <p>The SAS Similarity Theorem states that if two sides of one triangle are proportional to two corresponding sides of another triangle, and their included angles (the angle between those two sides) are congruent, then the two triangles are similar.    </p>
+                    </div>
+                    <div class="notes-box">
+                        <h3>📝 Important Notes</h3>
+                        <p>
+                            Included Angles: ∠ B ≅∠ Q <br>
+                            Proportional Sides:
+                            ABPQ = BCQR <br>
+                            Conclusion:  Triangle  ABC ⩭   Triangle  PQR
+                            </p>
+                    </div>
+                </div>
+
+                <button class="next-button" onclick="goToStage(3, 2)">CONTINUE TO EXAMPLE →</button>
+            </section>
+
+            <section class="stage" id="p3stage2">
+                <div class="stage-badge">🔎 STAGE 2 — EXAMPLE</div>
+                <h2>SAS Step-by-Step Example</h2>
+                <p class="stage-introduction">Step-by-step Example SAS</p>
+
+                <div class="example-image"><img src="examplesas.png" alt="SAS Example"></div>
+
+                <div class="worked-example">
+                    <div class="example-step"><span>1</span><div><h3>Check Included Angles</h3><p>∠ A = 50° and ∠ D = 50° → ∠ A ≅ ∠ D</p></div></div>
+                    <div class="example-step"><span>2</span><div><h3>Calculate Ratios of Corresponding Sides</h3><p>  AB/DE = 6/12 = 1/2<br> AC/DF = 8/16=1/2</p></div></div>
+                    <div class="example-step"><span>3</span><div><h3>Compare Ratios</h3><p>Since the sides forming the congruent included angle are proportional. </p></div></div>
+                    <div class="example-step"><span>4</span><div><h3>Conclusion</h3><p>By the SAS Similarity Theorem,  ⃤  ABC 〜   ⃤  DEF with a scale factor of 1:2. </p></div></div>
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="previous-button" onclick="goToStage(3, 1)">← BACK</button>
+                    <button class="next-button" onclick="goToStage(3, 3)">TRY PRACTICE →</button>
+                </div>
+            </section>
+
+            <section class="stage" id="p3stage3">
+                <div class="stage-badge">🎮 STAGE 3 — PRACTICE</div>
+                <h2>SAS Practice Arena</h2>
+                <p class="stage-introduction">Complete all three practice questions.</p>
+                <div class="question-box"><h2>Question: In  ⃤  PQR, PQ = 15, PR = 20, and ∠ P = 65°. In  ⃤  STU, ST = 6, SU = 8, and ∠ S = 65°.</h2>
+                <div id="practiceCards3"></div>
+
+                <div class="practice-complete" id="practiceComplete3">
+                    🎉 All SAS practices completed!<br>
+                    You can now enter the SAS Application.
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="previous-button" onclick="goToStage(3, 2)">← BACK</button>
+                    <button class="next-button" id="applicationButton3" onclick="goToStage(3, 4)" disabled>
+                        GO TO APPLICATION →
+                    </button>
+                </div>
+            </section>
+
+            <section class="stage" id="p3stage4">
+                <div class="stage-badge">🏆 STAGE 4 — APPLICATION</div>
+                <h2>SAS Quest Challenge</h2>
+                <p class="stage-introduction">Use what you learned to solve the final SAS challenge.</p>
+
+                <div class="application-image"><img src="applicationsas.png" alt="SAS Application"></div>
+
+                <div class="application-card">
+                    <h3>⚔️ SAS Final Challenge</h3>
+                    <p>Question:<br>
+                        A surveyor measures a small triangle with sides AB = 12 m and AC = 15 m. A larger similar triangle across the river has corresponding side DE = 36 m. If the corresponding side to AC is x, what is the length of \(x\)?<br>
+
+                        A. 30 m<br>
+                        B. 36 m<br>
+                        C. 45 m<br>
+                        D. 48 m<br>
+                    </p>
+                    <input id="applicationAnswer3" type="text" placeholder="Enter your answer...">
+                    <button onclick="completePart(3)">COMPLETE SAS QUEST</button>
+                    <div class="feedback" id="applicationFeedback3"></div>
+                </div>
+
+                <div class="part-complete" id="partComplete3">
+                    <div class="complete-icon">🏆</div>
+                    <h2>SAS COMPLETE!</h2>
+                    <p>You completed Part 3.</p>
+                    <div class="rewards">
+                        <span>⭐ +20 XP</span>
+                        <span>🪙 +20 Coins</span>
+                        <span>⚡ +10 CP</span>
+                    </div>
+                    <button class="next-button" onclick="openPart(4)">UNLOCK RTS →</button>
+                </div>
+            </section>
+        </section>
+
+
+        <!-- =========================================
+             PART 4 — RTS
+        ========================================== -->
+        <section class="part-page" id="part4">
+
+            <div class="part-banner">
+                <div>
+                    <span>PART 4 OF 5</span>
+                    <h1>RTS</h1>
+                    <p>Right Triangle Similarity</p>
+                </div>
+                <div class="part-icon">4</div>
+            </div>
+
+            <div class="stage-tabs">
+                <button class="stage-tab active" id="p4stageTab1">1. Learn</button>
+                <button class="stage-tab" id="p4stageTab2">2. Example</button>
+                <button class="stage-tab" id="p4stageTab3">3. Practice</button>
+                <button class="stage-tab" id="p4stageTab4">4. Application</button>
+            </div>
+
+            <section class="stage active-stage" id="p4stage1">
+                <div class="stage-badge">📚 STAGE 1 — LEARN</div>
+                <h2>Learn RTS</h2>
+                <p class="stage-introduction">Put your RTS lesson introduction here.</p>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">04</span>
+                        <div>
+                            <span class="lesson-type">THEOREM</span>
+                            <h3>Right Triangle Similarity Theorem</h3>
+                        </div>
+                    </div>
+                    <div class="lesson-image"><img src="RTS.jpg" alt="RTS"></div>
+                    <div class="definition-box">
+                        <h3>📖 Definition</h3>
+                        <p>The Right Triangle Similarity Theorem states that if the altitude is drawn from the right angle of a right triangle to its hypotenuse, then the two triangles formed are similar to each other and to the original right triangle. </p>
+                    </div>
+                    <div class="notes-box">
+                        <h3>📝 Important Notes</h3>
+                        <p>One way to prove this theorem is by illustrating the right triangles separately and showing that the corresponding angles are congruent. So, let △XYZ be a right triangle where ∠XYZ is the right angle, and YW is an altitude to the hypotenuse XZ.<br>
+                            Since ∠XYZ is a right angle and YW is an altitude, we can say that ∠X and ∠Z are complementary. Now, splitting the right triangle into two, we form new angles ∠XYW and ∠WYZ, which are complements of ∠X and ∠Z, respectively.<br>
+                            With these conditions, we can say that:<br>
+                            ∠X ≅ ∠WYZ and ∠Z ≅ ∠XYW <br>
+                            Also, ∠XWY ≅ ∠YWZ because they are right angles. Hence, all corresponding angles are congruent.
+                            Therefore,
+                            △XYZ∼△XYW∼△WYZ​
+                            </p>
+                    </div>
+                </div>
+
+                <button class="next-button" onclick="goToStage(4, 2)">CONTINUE TO EXAMPLE →</button>
+            </section>
+
+            <section class="stage" id="p4stage2">
+                <div class="stage-badge">🔎 STAGE 2 — EXAMPLE</div>
+                <h2>RTS Step-by-Step Example</h2>
+                <p class="stage-introduction">Put your RTS example introduction here.</p>
+
+                <div class="example-image"><img src="examplerts.png" alt="RTS Example"></div>
+
+                <div class="worked-example">
+                    <div class="example-step"><span>1</span><div><h3>Substitute terms of the proportion by the lengths of the sides.</h3><p>x/9=12/15</p></div></div>
+                    <div class="example-step"><span>2</span><div><h3>Solve for the value of x</h3><p>x=108/15</p></div></div>
+                    <div class="example-step"><span>3</span><div><h3>divide</h3><p>x=7.2 ft</p></div></div>
+                    <div class="example-step"><span>4</span><div><h3>conclusion</h3><p>Therefore, the distance from the track to the leech is 7.2 ft.</p></div></div>
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="previous-button" onclick="goToStage(4, 1)">← BACK</button>
+                    <button class="next-button" onclick="goToStage(4, 3)">TRY PRACTICE →</button>
+                </div>
+            </section>
+
+            <section class="stage" id="p4stage3">
+                <div class="stage-badge">🎮 STAGE 3 — PRACTICE</div>
+                <h2>RTS Practice Arena</h2>
+                <p class="stage-introduction">Complete all three practice questions.</p>
+                <div class="question-box"><h2>Question: In  ⃤  ABC, ∠A = 15°, AB = 8 cm, and BC is the side opposite the 30° angle. </h2>
+
+                <div id="practiceCards4"></div>
+
+                <div class="practice-complete" id="practiceComplete4">
+                    🎉 All RTS practices completed!<br>
+                    You can now enter the RTS Application.
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="previous-button" onclick="goToStage(4, 2)">← BACK</button>
+                    <button class="next-button" id="applicationButton4" onclick="goToStage(4, 4)" disabled>
+                        GO TO APPLICATION →
+                    </button>
+                </div>
+            </section>
+
+            <section class="stage" id="p4stage4">
+                <div class="stage-badge">🏆 STAGE 4 — APPLICATION</div>
+                <h2>RTS Quest Challenge</h2>
+                <p class="stage-introduction">Use what you learned to solve the final RTS challenge.</p>
+
+                <div class="application-image"><img src="applicationrts.png" alt="RTS Application"></div>
+
+                <div class="application-card">
+                    <h3>⚔️ RTS Final Challenge</h3>
+                    <p>Question: Using the Right Triangle Similarity Theorem, what is the length of the vertical support?<br>
+
+                        x^2=(9)(16) <br>
+
+                        A. 10 m <br>
+                        B. 12 m <br>
+                        C. 15 m <br>
+                        D. 25 m</p>
+                    <input id="applicationAnswer4" type="text" placeholder="Enter your answer...">
+                    <button onclick="completePart(4)">COMPLETE RTS QUEST</button>
+                    <div class="feedback" id="applicationFeedback4"></div>
+                </div>
+
+                <div class="part-complete" id="partComplete4">
+                    <div class="complete-icon">🏆</div>
+                    <h2>RTS COMPLETE!</h2>
+                    <p>You completed Part 4.</p>
+                    <div class="rewards">
+                        <span>⭐ +20 XP</span>
+                        <span>🪙 +20 Coins</span>
+                        <span>⚡ +10 CP</span>
+                    </div>
+                    <button class="next-button" onclick="openPart(5)">UNLOCK SRT →</button>
+                </div>
+            </section>
+        </section>
+
+
+        <!-- =========================================
+             PART 5 — SRT
+        ========================================== -->
+        <section class="part-page" id="part5">
+
+            <div class="part-banner">
+                <div>
+                    <span>PART 5 OF 5</span>
+                    <h1>SRT</h1>
+                    <p>Special Right Triangle</p>
+                </div>
+                <div class="part-icon">5</div>
+            </div>
+
+            <div class="stage-tabs">
+                <button class="stage-tab active" id="p5stageTab1">1. Learn</button>
+                <button class="stage-tab" id="p5stageTab2">2. Example</button>
+                <button class="stage-tab" id="p5stageTab3">3. Practice</button>
+                <button class="stage-tab" id="p5stageTab4">4. Application</button>
+            </div>
+
+            <section class="stage active-stage" id="p5stage1">
+                <div class="stage-badge">📚 STAGE 1 — LEARN</div>
+                <h2>Learn SRT</h2>
+                <p class="stage-introduction">Lesson Proper and Visual Representation</p>
+
+                <div class="lesson-card">
+                    <div class="lesson-header">
+                        <span class="lesson-number">05</span>
+                        <div>
+                            <span class="lesson-type">THEOREM</span>
+                            <h3>Special Right Triangle Theorem</h3>
+                        </div>
+                    </div>
+                    <div class="lesson-image"><img src="SRT.jpg" alt="SRT"></div>
+                    <div class="definition-box">
+                        <h3>📖 Definition</h3>
+                        <p>The Special Right Triangle Theorem is a geometric rule stating that right triangles with specific angle measures (45°-45°-90° or 30°-60°-90°) have fixed, predictable side-length ratios.
+                            These special triangles are categorized into two distinct geometric groups: Isosceles Right Triangles and Scalene Right Triangles.</p>
+                    </div>
+                    <div class="notes-box">
+                        <h3>📝 Important Notes</h3>
+                        <p>1. The Isosceles Right Triangle (45°-45°-90°)
+                            An isosceles triangle has two equal sides and two equal angles. When it contains a 90° angle, it forms a 45°-45°-90°triangle.<br>
+
+                            The Geometric Rule: The two legs are completely identical in length. The hypotenuse is always the leg length multiplied by √2.<br>
+
+                            The Fixed Ratio: <br>
+
+                            Formula: <br>
+                            If you have a Leg, multiply by √2 to get the Hypotenuse:Hypotenuse= Leg x √2<br>
+
+                            If you have the Hypotenuse, divide by √2 to get a Leg<br>
+
+                            2. The Scalene Right Triangle (30°-60°-90°)
+
+                                A scalene triangle has three entirely different side lengths and three different angles. The most famous scalene right triangle is the (30°-60°-90°) triangle, which is exactly half of an equilateral triangle.<br>
+                                The Geometric Rule: The sides scale predictably based on the short leg (the side opposite the 30° angle). The hypotenuse is always double the short leg, and the long leg is the short leg multiplied by √3.
+                            </p>
+                    </div>
+                </div>
+
+                <button class="next-button" onclick="goToStage(5, 2)">CONTINUE TO EXAMPLE →</button>
+            </section>
+
+            <section class="stage" id="p5stage2">
+                <div class="stage-badge">🔎 STAGE 2 — EXAMPLE</div>
+                <h2>SRT Step-by-Step Example</h2>
+                <p class="stage-introduction">Step-by-Step Worked Example</p>
+
+                <div class="example-image"><img src="examplesrt.png" alt="SRT Example"></div>
+
+                <div class="worked-example">
+                    <div class="example-step"><span>1</span><div><h3>Recall the Ratio Blueprint</h3><p>The ratio for an isosceles right triangle is Leg: Leg: Hypotenuse= x : x : x√2.</p></div></div>
+                    <div class="example-step"><span>2</span><div><h3>Set up your equation</h3><p>We know the hypotenuse is 10, so set x√2.equal to 10:<br> x√2=10</p></div></div>
+                    <div class="example-step"><span>3</span><div><h3>Isolate the leg (x)</h3><p>Divide both sides by √2:</p></div></div>
+                    <div class="example-step"><span>4</span><div><h3>Rationalize the denominator</h3><p>In math, we don't leave square roots on the bottom of a fraction. Multiply the top and bottom by √2</p></div></div>
+                    <div class="example-step"><span>5</span><div><h3>Simplify</h3><p>Divide 10 by 2:x = 5√2</p></div></div>
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="previous-button" onclick="goToStage(5, 1)">← BACK</button>
+                    <button class="next-button" onclick="goToStage(5, 3)">TRY PRACTICE →</button>
+                </div>
+            </section>
+
+            <section class="stage" id="p5stage3">
+                <div class="stage-badge">🎮 STAGE 3 — PRACTICE</div>
+                <h2>SRT Practice Arena</h2>
+                <p class="stage-introduction">Complete all three practice questions.</p>
+                <div class="practice-image"><img src="practicesrt.jpg"></div>
+                <div id="practiceCards5"></div>
+
+                <div class="practice-complete" id="practiceComplete5">
+                    🎉 All SRT practices completed!<br>
+                    You can now enter the SRT Application.
+                </div>
+
+                <div class="navigation-buttons">
+                    <button class="previous-button" onclick="goToStage(5, 2)">← BACK</button>
+                    <button class="next-button" id="applicationButton5" onclick="goToStage(5, 4)" disabled>
+                        GO TO APPLICATION →
+                    </button>
+                </div>
+            </section>
+
+            <section class="stage" id="p5stage4">
+                <div class="stage-badge">🏆 STAGE 4 — APPLICATION</div>
+                <h2>SRT Quest Challenge</h2>
+                <p class="stage-introduction">Use what you learned to solve the final SRT challenge.</p>
+
+                <div class="application-image"><img src="applicationsrt.png" alt="SRT Application"></div>
+                
+
+                <div class="application-card">
+                    <h3>⚔️ SRT Final Challenge</h3>
+                    <p>Question: If the corresponding side to AB = 40 m in the smaller triangle is 16 m, what is the width of the river AC? <br>
+                        A. 80 m  <br>
+                        B. 100 m <br>
+                        C. 125 m <br>
+                        D. 200 m <br>
+                    </p>
+                    <input id="applicationAnswer5" type="text" placeholder="Enter your answer...">
+                    <button onclick="completePart(5)">COMPLETE SRT QUEST</button>
+                    <div class="feedback" id="applicationFeedback5"></div>
+                </div>
+
+                <div class="part-complete" id="partComplete5">
+                    <div class="complete-icon">🏆</div>
+                    <h2>SRT COMPLETE!</h2>
+                    <p>You completed Part 5.</p>
+                    <div class="rewards">
+                        <span>⭐ +20 XP</span>
+                        <span>🪙 +20 Coins</span>
+                        <span>⚡ +10 CP</span>
+                    </div>
+                    <button class="next-button" onclick="finishLevel1()">FINISH LEVEL 1 →</button>
+                </div>
+            </section>
+        </section>
+
+
+        <!-- =========================================
+             LEVEL 1 COMPLETE
+        ========================================== -->
+        <section class="level-finished" id="levelFinished">
+
+            <div class="complete-icon big">🏆</div>
+
+            <span class="final-label">LEVEL 1 COMPLETE</span>
+
+            <h1>CONGRATULATIONS!</h1>
+
+            <p>
+                You completed all five Triangle Quest parts:
+                SSS, AA, SAS, RTS, and SRT.
+            </p>
+
+            <div class="final-rewards">
+                <div>⭐ <strong>+50 XP</strong></div>
+                <div>🪙 <strong>+50 Coins</strong></div>
+                <div>⚡ <strong>+50 CP</strong></div>
+            </div>
+
+            <a href="level2.html" class="level2-button">
+                🔓 ENTER LEVEL 2 →
+            </a>
+        </section>
+
+    </section>
+</main>
+
+<script src="level1.script.js"></script>
+</body>
+</html>

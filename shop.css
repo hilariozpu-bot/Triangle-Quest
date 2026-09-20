@@ -1,0 +1,907 @@
+/* =========================================================
+   TRIANGLE QUEST - SHOP
+   CUTE ORANGE / YELLOW / PEACH GAME THEME
+========================================================= */
+@font-face {
+    font-family: "yellow banana";
+    src: url("Yellow Banana.otf");
+}
+
+:root {
+
+    --orange: #f28c28;
+    --orange-dark: #d86f12;
+
+    --yellow: #ffd166;
+    --yellow-light: #fff3c7;
+
+    --peach: #ffe0c2;
+    --peach-light: #fff8ef;
+
+    --cream: #fffaf5;
+
+    --brown: #704214;
+    --brown-light: #986b39;
+
+    --green: #68a357;
+
+    --white: #ffffff;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+body {
+    font-family: "yellow banana", Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff3df,
+            #ffd9bd
+        );
+
+    color: #55352c;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.top-bar {
+
+    min-height: 76px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f28c28,
+            #ffb347
+        );
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 10px 30px;
+
+    box-shadow:
+        0 4px 14px rgba(112, 66, 20, 0.18);
+
+}
+
+
+.game-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.back-home {
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 28px;
+
+    font-weight: bold;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 10px;
+
+    transition: 0.2s;
+
+}
+
+
+.back-home:hover {
+
+    background: rgba(255,255,255,0.2);
+
+}
+
+
+.game-title img {
+
+    width: 42px;
+    height: 42px;
+
+    object-fit: contain;
+
+}
+
+
+.game-title h1 {
+
+    font-size: 18px;
+
+}
+
+
+.game-title span {
+
+    font-size: 11px;
+
+    opacity: 0.9;
+
+}
+
+
+.player-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.stat {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+}
+
+
+.stat-label {
+
+    font-size: 10px;
+
+    opacity: 0.8;
+
+}
+
+
+.stat strong {
+
+    font-size: 14px;
+
+}
+
+
+.coins-display img {
+
+    width: 25px;
+    height: 25px;
+
+    object-fit: contain;
+
+}
+
+
+.items-button {
+
+    text-decoration: none;
+
+    background: white;
+
+    color: var(--orange-dark);
+
+    padding: 9px 13px;
+
+    border-radius: 12px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 3px 0 rgba(112, 66, 20, 0.15);
+
+    transition: 0.2s;
+
+}
+
+
+.items-button:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+/* =========================================================
+   SHOP PAGE
+========================================================= */
+
+.shop-page {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 35px 25px 50px;
+
+}
+
+
+/* =========================================================
+   SHOP HEADER
+========================================================= */
+
+.shop-header {
+
+    background: white;
+
+    border:
+        2px solid #f5d0ac;
+
+    border-radius: 22px;
+
+    padding: 24px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    box-shadow:
+        0 7px 20px rgba(112, 66, 20, 0.08);
+
+    margin-bottom: 25px;
+
+}
+
+
+.shop-title-area {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.shop-sign {
+
+    width: 65px;
+    height: 65px;
+
+    background: var(--yellow-light);
+
+    border:
+        2px solid var(--yellow);
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 35px;
+
+}
+
+
+.small-title {
+
+    color: var(--orange-dark);
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+}
+
+
+.shop-header h1 {
+
+    font-size: 28px;
+
+    margin: 4px 0;
+
+}
+
+
+.shop-header p {
+
+    color: var(--brown-light);
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   SHOP COINS
+========================================================= */
+
+.shop-coins {
+
+    min-width: 170px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff3c5,
+            #ffe2a1
+        );
+
+    border:
+        2px solid var(--yellow);
+
+    border-radius: 16px;
+
+    padding: 12px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+}
+
+
+.shop-coins img {
+
+    width: 42px;
+    height: 42px;
+
+    object-fit: contain;
+
+}
+
+
+.shop-coins span {
+
+    display: block;
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    color: var(--brown-light);
+
+}
+
+
+.shop-coins strong {
+
+    font-size: 23px;
+
+    color: var(--orange-dark);
+
+}
+
+
+/* =========================================================
+   SECTION LABEL
+========================================================= */
+
+.shop-label {
+
+    text-align: center;
+
+    margin: 25px 0 18px;
+
+}
+
+
+.shop-label span {
+
+    display: inline-block;
+
+    background: var(--orange);
+
+    color: white;
+
+    padding: 8px 18px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 3px 0 #c96510;
+
+}
+
+
+/* =========================================================
+   SHOP GRID
+========================================================= */
+
+.shop-items {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap: 20px;
+
+}
+
+
+/* =========================================================
+   SHOP ITEM
+========================================================= */
+
+.shop-item {
+
+    position: relative;
+
+    background: white;
+
+    border:
+        2px solid #f4d2b0;
+
+    border-radius: 20px;
+
+    padding: 16px;
+
+    display: flex;
+
+    gap: 16px;
+
+    min-height: 205px;
+
+    box-shadow:
+        0 6px 16px rgba(112, 66, 20, 0.08);
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s;
+
+}
+
+
+.shop-item:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 22px rgba(112, 66, 20, 0.13);
+
+}
+
+
+/* =========================================================
+   RIBBON
+========================================================= */
+
+.item-ribbon {
+
+    position: absolute;
+
+    top: 10px;
+
+    right: 10px;
+
+    background: var(--yellow);
+
+    color: var(--brown);
+
+    font-size: 8px;
+
+    font-weight: bold;
+
+    padding: 5px 8px;
+
+    border-radius: 8px;
+
+}
+
+
+/* =========================================================
+   ITEM IMAGE
+========================================================= */
+
+.item-image {
+
+    flex: 0 0 145px;
+
+    height: 165px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff5e8,
+            #ffe0bf
+        );
+
+    border:
+        2px solid #f4d0aa;
+
+    border-radius: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+}
+
+
+.item-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    padding: 8px;
+
+}
+
+
+/* =========================================================
+   ITEM CONTENT
+========================================================= */
+
+.item-content {
+
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+.item-type {
+
+    color: var(--orange-dark);
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+}
+
+
+.item-content h2 {
+
+    font-size: 20px;
+
+    margin: 5px 0 8px;
+
+}
+
+
+.item-content p {
+
+    color: var(--brown-light);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+}
+
+
+/* =========================================================
+   ITEM BOTTOM
+========================================================= */
+
+.item-bottom {
+
+    margin-top: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+}
+
+
+.item-price {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: var(--orange-dark);
+
+}
+
+
+.item-price img {
+
+    width: 25px;
+    height: 25px;
+
+}
+
+
+/* =========================================================
+   BUY BUTTON
+========================================================= */
+
+.buy-button {
+
+    border: none;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f9a13b,
+            #e77b17
+        );
+
+    color: white;
+
+    padding: 10px 22px;
+
+    border-radius: 11px;
+
+    font-weight: bold;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 0 #c96510;
+
+    transition: 0.15s;
+
+}
+
+
+.buy-button:hover {
+
+    transform: translateY(-2px);
+
+}
+
+
+.buy-button:active {
+
+    transform: translateY(2px);
+
+    box-shadow:
+        0 2px 0 #c96510;
+
+}
+
+
+.buy-button.owned {
+
+    background:
+        linear-gradient(
+            180deg,
+            #82b96f,
+            #599649
+        );
+
+    box-shadow:
+        0 4px 0 #427435;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================================================
+   TIP
+========================================================= */
+
+.shop-tip {
+
+    margin-top: 25px;
+
+    background: var(--yellow-light);
+
+    border:
+        2px solid #f0d477;
+
+    border-radius: 17px;
+
+    padding: 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+}
+
+
+.tip-icon {
+
+    width: 45px;
+    height: 45px;
+
+    background: white;
+
+    border-radius: 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 23px;
+
+}
+
+
+.shop-tip h3 {
+
+    font-size: 14px;
+
+    margin-bottom: 3px;
+
+}
+
+
+.shop-tip p {
+
+    font-size: 11px;
+
+    color: var(--brown-light);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .shop-items {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .shop-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .shop-coins {
+
+        width: 100%;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .top-bar {
+
+        padding: 10px 15px;
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+    }
+
+
+    .player-info {
+
+        width: 100%;
+
+        justify-content: space-between;
+
+    }
+
+
+    .shop-page {
+
+        padding: 20px 14px;
+
+    }
+
+
+    .shop-title-area {
+
+        align-items: flex-start;
+
+    }
+
+
+    .shop-header h1 {
+
+        font-size: 22px;
+
+    }
+
+
+    .shop-item {
+
+        flex-direction: column;
+
+    }
+
+
+    .item-image {
+
+        width: 100%;
+
+        height: 180px;
+
+        flex: none;
+
+    }
+
+}
+
+.shop-placeholder {
+    font-size: 52px;
+}

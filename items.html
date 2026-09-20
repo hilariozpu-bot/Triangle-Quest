@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Triangle Quest - Items</title>
+
+    <link
+        rel="stylesheet"
+        href="items.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         TOP BAR
+    ====================================================== -->
+
+    <header class="top-bar">
+
+        <div class="game-title">
+
+            <a
+                href="index.html"
+                class="back-home"
+            >
+                ←
+            </a>
+
+
+            <img
+                src="logo.png"
+                alt="Triangle Quest Logo"
+            >
+
+
+            <div>
+
+                <h1>
+                    Triangle Quest
+                </h1>
+
+                <span>
+                    My Items
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="player-info">
+
+
+            <div class="stat">
+
+                <span class="stat-label">
+                    LEVEL
+                </span>
+
+                <strong id="playerLevel">
+                    1
+                </strong>
+
+            </div>
+
+
+            <div class="stat coins-display">
+
+                <img
+                    src="coins.png"
+                    alt="Coins"
+                >
+
+                <strong id="coinAmount">
+                    100
+                </strong>
+
+            </div>
+
+
+            <a
+                href="shop.html"
+                class="shop-button"
+            >
+                🛒 SHOP
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         ITEMS PAGE
+    ====================================================== -->
+
+    <main class="items-page">
+
+
+        <section class="items-header">
+
+            <div>
+
+                <p>
+                    YOUR COLLECTION
+                </p>
+
+                <h1>
+                    🎒 My Knowledge Items
+                </h1>
+
+                <span>
+                    Open your purchased learning materials
+                    whenever you want!
+                </span>
+
+            </div>
+
+
+            <div class="bag-icon">
+                🎒
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ITEMS
+        ================================================== -->
+
+        <section
+            id="itemsContainer"
+            class="items-grid"
+        >
+        </section>
+
+
+
+        <!-- =================================================
+             EMPTY INVENTORY
+        ================================================== -->
+
+        <section
+            id="emptyItems"
+            class="empty-items"
+        >
+
+            <div class="empty-icon">
+                🛍️
+            </div>
+
+            <h2>
+                Your bag is empty!
+            </h2>
+
+            <p>
+                Visit the Knowledge Shop and buy
+                your first learning material.
+            </p>
+
+            <a
+                href="shop.html"
+                class="visit-shop"
+            >
+                VISIT SHOP
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+    <script src="items.js"></script>
+
+</body>
+
+</html>

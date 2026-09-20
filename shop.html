@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Triangle Quest - Shop</title>
+
+    <link
+        rel="stylesheet"
+        href="shop.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         TOP BAR
+    ====================================================== -->
+
+    <header class="top-bar">
+
+        <div class="game-title">
+
+            <a
+                href="index.html"
+                class="back-home"
+            >
+                ←
+            </a>
+
+
+            <img
+                src="logo.png"
+                alt="Triangle Quest Logo"
+            >
+
+
+            <div>
+
+                <h1>
+                    Triangle Quest
+                </h1>
+
+                <span>
+                    Knowledge Shop
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="player-info">
+
+
+            <!-- LEVEL -->
+
+            <div class="stat">
+
+                <span class="stat-label">
+                    LEVEL
+                </span>
+
+                <strong id="playerLevel">
+                    1
+                </strong>
+
+            </div>
+
+
+            <!-- COINS -->
+
+            <div class="stat coins-display">
+
+                <img
+                    src="coins.png"
+                    alt="Coins"
+                >
+
+                <strong id="coinAmount">
+                    100
+                </strong>
+
+            </div>
+
+
+            <!-- ITEMS -->
+
+            <a
+                href="items.html"
+                class="items-button"
+            >
+                🎒 ITEMS
+            </a>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         SHOP PAGE
+    ====================================================== -->
+
+    <main class="shop-page">
+
+
+        <!-- =================================================
+             SHOP HEADER
+        ================================================== -->
+
+        <section class="shop-header">
+
+
+            <div class="shop-title-area">
+
+                <div class="shop-sign">
+                    🛒
+                </div>
+
+
+                <div>
+
+                    <p class="small-title">
+                        WELCOME, ADVENTURER!
+                    </p>
+
+                    <h1>
+                        The Knowledge Shop
+                    </h1>
+
+                    <p>
+                        Spend your coins to unlock
+                        helpful triangle similarity
+                        learning materials!
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- COIN DISPLAY -->
+
+            <div class="shop-coins">
+
+                <img
+                    src="coins.png"
+                    alt="Coins"
+                >
+
+
+                <div>
+
+                    <span>
+                        YOUR COINS
+                    </span>
+
+                    <strong id="shopCoins">
+                        100
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             SHOP CATEGORIES
+        ================================================== -->
+
+        <div class="shop-label">
+
+            <span>
+                ✦ TRIANGLE SIMILARITY MATERIALS ✦
+            </span>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SHOP ITEMS
+        ================================================== -->
+
+        <section class="shop-items">
+
+
+            <!-- =================================================
+                 SSS SIMILARITY
+            ================================================== -->
+
+            <div
+                class="shop-item"
+                data-item-id="SSS"
+            >
+
+                <div class="item-ribbon">
+                    POPULAR
+                </div>
+
+
+                <div class="item-image">
+
+                    <img
+                        src="sss-preview.png"
+                        alt="SSS Similarity Notes"
+                    >
+
+                </div>
+
+
+                <div class="item-content">
+
+                    <span class="item-type">
+                        SIMILARITY THEOREM
+                    </span>
+
+
+                    <h2>
+                        SSS Similarity
+                    </h2>
+
+
+                    <p>
+                        Learn how Side-Side-Side
+                        can be used to determine
+                        if two triangles are similar.
+                    </p>
+
+
+                    <div class="item-bottom">
+
+
+                        <span class="item-price">
+
+                            <img
+                                src="coins.png"
+                                alt="Coins"
+                            >
+
+                            50
+
+                        </span>
+
+
+                        <button
+                            class="buy-button"
+                            onclick="buyItem('SSS')"
+                        >
+                            BUY
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 AA SIMILARITY
+            ================================================== -->
+
+            <div
+                class="shop-item"
+                data-item-id="AA"
+            >
+
+                <div class="item-image">
+
+                    <img
+                        src="aa-preview.png"
+                        alt="AA Similarity Notes"
+                    >
+
+                </div>
+
+
+                <div class="item-content">
+
+                    <span class="item-type">
+                        SIMILARITY POSTULATE
+                    </span>
+
+
+                    <h2>
+                        AA Similarity
+                    </h2>
+
+
+                    <p>
+                        Learn how two pairs of
+                        corresponding angles can
+                        establish triangle similarity.
+                    </p>
+
+
+                    <div class="item-bottom">
+
+
+                        <span class="item-price">
+
+                            <img
+                                src="coins.png"
+                                alt="Coins"
+                            >
+
+                            75
+
+                        </span>
+
+
+                        <button
+                            class="buy-button"
+                            onclick="buyItem('AA')"
+                        >
+                            BUY
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SAS SIMILARITY
+            ================================================== -->
+
+            <div
+                class="shop-item"
+                data-item-id="SAS"
+            >
+
+                <div class="item-image">
+
+                    <img
+                        src="sas-preview.png"
+                        alt="SAS Similarity Notes"
+                    >
+
+                </div>
+
+
+                <div class="item-content">
+
+                    <span class="item-type">
+                        SIMILARITY THEOREM
+                    </span>
+
+
+                    <h2>
+                        SAS Similarity
+                    </h2>
+
+
+                    <p>
+                        Learn how Side-Angle-Side
+                        can be used to determine
+                        if two triangles are similar.
+                    </p>
+
+
+                    <div class="item-bottom">
+
+
+                        <span class="item-price">
+
+                            <img
+                                src="coins.png"
+                                alt="Coins"
+                            >
+
+                            100
+
+                        </span>
+
+
+                        <button
+                            class="buy-button"
+                            onclick="buyItem('SAS')"
+                        >
+                            BUY
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 RIGHT TRIANGLE SIMILARITY
+            ================================================== -->
+
+            <div
+                class="shop-item"
+                data-item-id="RTS"
+            >
+
+                <div class="item-image">
+
+                    <img
+                        src="rts-preview.png"
+                        alt="Right Triangle Similarity Notes"
+                    >
+
+                </div>
+
+
+                <div class="item-content">
+
+                    <span class="item-type">
+                        SIMILARITY THEOREM
+                    </span>
+
+
+                    <h2>
+                        Right Triangle Similarity
+                    </h2>
+
+
+                    <p>
+                        Learn how the altitude to
+                        the hypotenuse creates
+                        similar right triangles.
+                    </p>
+
+
+                    <div class="item-bottom">
+
+
+                        <span class="item-price">
+
+                            <img
+                                src="coins.png"
+                                alt="Coins"
+                            >
+
+                            125
+
+                        </span>
+
+
+                        <button
+                            class="buy-button"
+                            onclick="buyItem('RTS')"
+                        >
+                            BUY
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SPECIAL RIGHT TRIANGLE
+            ================================================== -->
+
+            <div
+                class="shop-item"
+                data-item-id="SRT"
+            >
+
+                <div class="item-image">
+
+                    <img
+                        src="srt-preview.png"
+                        alt="Special Right Triangle Notes"
+                    >
+
+                </div>
+
+
+                <div class="item-content">
+
+                    <span class="item-type">
+                        SPECIAL TRIANGLE
+                    </span>
+
+
+                    <h2>
+                        Special Right Triangle
+                    </h2>
+
+
+                    <p>
+                        Learn the important side
+                        relationships in 30-60-90
+                        and 45-45-90 triangles.
+                    </p>
+
+
+                    <div class="item-bottom">
+
+
+                        <span class="item-price">
+
+                            <img
+                                src="coins.png"
+                                alt="Coins"
+                            >
+
+                            150
+
+                        </span>
+
+
+                        <button
+                            class="buy-button"
+                            onclick="buyItem('SRT')"
+                        >
+                            BUY
+                        </button>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- VIDEO LESSON 1 -->
+            <div class="shop-item" data-item-id="VIDEO1">
+                <div class="item-image">
+                    <div class="shop-placeholder"><img src="video.png"></div>
+                </div>
+                <div class="item-content">
+                    <span class="item-type">VIDEO LESSON</span>
+                    <h2>Triangle Similarity Video</h2>
+                    <p>Unlock a video lesson about triangle similarity.</p>
+                    <div class="item-bottom">
+                        <span class="item-price">
+                            <img src="coins.png" alt="Coins">
+                            200
+                        </span>
+                        <button class="buy-button" onclick="buyItem('VIDEO1')">BUY</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VIDEO LESSON 2 -->
+            <div class="shop-item" data-item-id="VIDEO2">
+                <div class="item-image">
+                    <div class="shop-placeholder"><img src="video1.png"></div>
+                </div>
+                <div class="item-content">
+                    <span class="item-type">VIDEO LESSON</span>
+                    <h2>Triangle Similarity Video 2</h2>
+                    <p>Unlock a second video lesson about triangle similarity.</p>
+                    <div class="item-bottom">
+                        <span class="item-price">
+                            <img src="coins.png" alt="Coins">
+                            200
+                        </span>
+                        <button class="buy-button" onclick="buyItem('VIDEO2')">BUY</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             ADVENTURER TIP
+        ================================================== -->
+
+        <section class="shop-tip">
+
+            <div class="tip-icon">
+                💡
+            </div>
+
+
+            <div>
+
+                <h3>
+                    Adventurer's Tip
+                </h3>
+
+
+                <p>
+                    Complete quests to earn more coins!
+                    Then visit the shop to unlock
+                    useful triangle similarity materials.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <script src="shop.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,562 @@
+/* =========================================================
+   TRIANGLE QUEST - ITEMS
+========================================================= */
+@font-face {
+    font-family: "yellow banana";
+    src: url("Yellow Banana.otf");
+}
+
+:root {
+
+    --orange: #f28c28;
+    --orange-dark: #d86f12;
+
+    --yellow: #ffd166;
+    --yellow-light: #fff3c7;
+
+    --peach: #ffe0c2;
+    --peach-light: #fff8ef;
+
+    --brown: #704214;
+    --brown-light: #986b39;
+
+    --white: #ffffff;
+
+}
+
+
+* {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+}
+
+
+body {
+    font-family: "yellow banana", Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff3df,
+            #ffd9bd
+        );
+
+    color: #55352c;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.top-bar {
+
+    min-height: 76px;
+
+    padding: 10px 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f28c28,
+            #ffb347
+        );
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.game-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.back-home {
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 28px;
+
+}
+
+
+.game-title img {
+
+    width: 42px;
+
+    height: 42px;
+
+    object-fit: contain;
+
+}
+
+
+.game-title h1 {
+
+    font-size: 18px;
+
+}
+
+
+.game-title span {
+
+    font-size: 11px;
+
+}
+
+
+.player-info {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.stat {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+}
+
+
+.stat-label {
+
+    font-size: 10px;
+
+}
+
+
+.coins-display img {
+
+    width: 25px;
+
+}
+
+
+.shop-button {
+
+    color: var(--orange-dark);
+
+    background: white;
+
+    text-decoration: none;
+
+    padding: 9px 14px;
+
+    border-radius: 11px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.items-page {
+
+    max-width: 1050px;
+
+    margin: auto;
+
+    padding: 35px 20px;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.items-header {
+
+    background: white;
+
+    border:
+        2px solid #f4d0aa;
+
+    border-radius: 22px;
+
+    padding: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    box-shadow:
+        0 6px 18px rgba(112,66,20,0.08);
+
+}
+
+
+.items-header p {
+
+    color: var(--orange-dark);
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+}
+
+
+.items-header h1 {
+
+    margin: 5px 0;
+
+    font-size: 27px;
+
+}
+
+
+.items-header span {
+
+    color: var(--brown-light);
+
+    font-size: 12px;
+
+}
+
+
+.bag-icon {
+
+    width: 70px;
+    height: 70px;
+
+    background: var(--yellow-light);
+
+    border:
+        2px solid var(--yellow);
+
+    border-radius: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 37px;
+
+}
+
+
+/* =========================================================
+   ITEM GRID
+========================================================= */
+
+.items-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            2,
+            minmax(0, 1fr)
+        );
+
+    gap: 18px;
+
+    margin-top: 25px;
+
+}
+
+
+/* =========================================================
+   ITEM CARD
+========================================================= */
+
+.inventory-item {
+
+    background: white;
+
+    border:
+        2px solid #f2cfac;
+
+    border-radius: 18px;
+
+    padding: 15px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    transition: 0.2s;
+
+}
+
+
+.inventory-item:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 18px rgba(112,66,20,0.1);
+
+}
+
+
+.inventory-image {
+
+    width: 105px;
+    height: 105px;
+
+    flex-shrink: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff3df,
+            #ffe0bd
+        );
+
+    border-radius: 14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+}
+
+
+.inventory-image img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    padding: 6px;
+
+}
+
+
+.inventory-content {
+
+    flex: 1;
+
+}
+
+
+.inventory-type {
+
+    color: var(--orange-dark);
+
+    font-size: 9px;
+
+    font-weight: bold;
+
+}
+
+
+.inventory-content h2 {
+
+    font-size: 18px;
+
+    margin: 4px 0;
+
+}
+
+
+.inventory-content p {
+
+    color: var(--brown-light);
+
+    font-size: 11px;
+
+    line-height: 1.4;
+
+}
+
+
+.open-item {
+
+    display: inline-block;
+
+    margin-top: 10px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f9a13b,
+            #e77b17
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 8px 14px;
+
+    border-radius: 9px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.empty-items {
+
+    display: none;
+
+    text-align: center;
+
+    background: white;
+
+    border:
+        2px dashed #edc99f;
+
+    border-radius: 20px;
+
+    padding: 50px 20px;
+
+    margin-top: 25px;
+
+}
+
+
+.empty-icon {
+
+    font-size: 55px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.empty-items h2 {
+
+    font-size: 21px;
+
+}
+
+
+.empty-items p {
+
+    color: var(--brown-light);
+
+    font-size: 12px;
+
+    margin: 8px 0 18px;
+
+}
+
+
+.visit-shop {
+
+    display: inline-block;
+
+    background: var(--orange);
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 11px 20px;
+
+    border-radius: 10px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .items-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .top-bar {
+
+        flex-wrap: wrap;
+
+        gap: 10px;
+
+    }
+
+
+    .player-info {
+
+        width: 100%;
+
+        justify-content: space-between;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .inventory-item {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+}
+
+.inventory-placeholder {
+    font-size: 48px;
+}

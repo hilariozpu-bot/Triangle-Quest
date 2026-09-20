@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Triangle Quest - Level 3</title>
+
+    <link rel="stylesheet" href="level3style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         TOP BAR
+    ====================================================== -->
+
+    <header class="top-bar">
+
+        <div class="game-title">
+            <span class="title-icon">△</span>
+            <div>
+                <h1>Triangle Quest</h1>
+                <p>Two-Column Proof Quest</p>
+            </div>
+        </div>
+
+        <div class="level-badge">
+            LEVEL 3
+        </div>
+
+        <div class="player-stats">
+
+            <div class="stat">
+                <span><img src="coins.png"></span>
+                <strong id="coins">100</strong>
+            </div>
+
+            <div class="stat">
+                <span><img src="level.png"></span>
+                <strong id="xp">0</strong>
+                XP
+            </div>
+
+            <div class="stat">
+                <span><img src="energy.png"></span>
+                <strong id="cp">0</strong>
+                TP
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN LAYOUT
+    ====================================================== -->
+
+    <main class="game-layout">
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+            <div class="quest-header">
+                <span><img src="quest.png"></span>
+                <div>
+                    <h2>Proof Quest</h2>
+                    <p>5 Stages</p>
+                </div>
+            </div>
+
+
+            <div class="stage-list">
+
+                <button class="stage-button active" id="stageButton1"
+                    onclick="openStage(1)">
+                    <span>1</span>
+                    <div>
+                        <strong>SSS</strong>
+                        <small>Similarity</small>
+                    </div>
+                </button>
+
+                <button class="stage-button locked" id="stageButton2"
+                    onclick="openStage(2)">
+                    <span>2</span>
+                    <div>
+                        <strong>AA</strong>
+                        <small>Similarity</small>
+                    </div>
+                </button>
+
+                <button class="stage-button locked" id="stageButton3"
+                    onclick="openStage(3)">
+                    <span>3</span>
+                    <div>
+                        <strong>SAS</strong>
+                        <small>Similarity</small>
+                    </div>
+                </button>
+
+                <button class="stage-button locked" id="stageButton4"
+                    onclick="openStage(4)">
+                    <span>4</span>
+                    <div>
+                        <strong>Right Triangle</strong>
+                        <small>Similarity</small>
+                    </div>
+                </button>
+
+                <button class="stage-button locked" id="stageButton5"
+                    onclick="openStage(5)">
+                    <span>5</span>
+                    <div>
+                        <strong>Special Right</strong>
+                        <small>Triangle</small>
+                    </div>
+                </button>
+
+            </div>
+
+
+            <div class="sidebar-note">
+
+                <h3>💡 Proof Tip</h3>
+
+                <p>
+                    A two-column proof always asks:
+                </p>
+
+                <strong>
+                    "What is true?"
+                </strong>
+
+                <span>and</span>
+
+                <strong>
+                    "Why is it true?"
+                </strong>
+
+            </div>
+
+
+            <button class="home-button" onclick="goHome()">
+                <img src="logo.png"> HOME
+            </button>
+
+        </aside>
+
+
+        <!-- CONTENT -->
+
+        <section class="content-area">
+
+            <div class="level-heading">
+
+                <div>
+                    <span class="small-label">
+                        LEVEL 3
+                    </span>
+
+                    <h1>
+                        Two-Column Proof
+                    </h1>
+
+                    <p>
+                        Prove that triangles are similar using
+                        statements and reasons.
+                    </p>
+                </div>
+
+                <div class="progress-box">
+
+                    <span id="progressText">
+                        Stage 1 of 5
+                    </span>
+
+                    <div class="progress-bar">
+                        <div id="progressFill"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 STAGE CONTENT
+            ================================================== -->
+
+            <div id="stageContainer"></div>
+
+
+            <!-- =================================================
+                 FINISHED SCREEN
+            ================================================== -->
+
+            <div id="levelFinished" class="finished-screen">
+
+                <div class="trophy">
+                    🏆
+                </div>
+
+                <h1>
+                    LEVEL 3 COMPLETE!
+                </h1>
+
+                <p>
+                    Amazing work, Proof Master!
+                </p>
+
+                <p>
+                    You completed all five
+                    two-column proof challenges.
+                </p>
+
+                <div class="reward-box">
+
+                    <div>
+                        <img src="coins.png">
+                        <strong>+50 Coins</strong>
+                    </div>
+
+                    <div>
+                        <img src="level.png">
+                        <strong>+50 XP</strong>
+                    </div>
+
+                    <div>
+                        <img src="energy.png">
+                        <strong>+50 TP</strong>
+                    </div>
+
+                </div>
+
+
+
+                <div class="special-reward">
+
+                    <h2>
+                         SPECIAL COMPLETION REWARD!
+                    </h2>
+
+                    <p>
+                        You finished every Level 3 step!
+                        Two new rewards have been added to your Items.
+                    </p>
+
+                    <div class="special-reward-items">
+
+                        <div class="special-reward-item">
+                            <img src="new-char.png" alt="New Character">
+                            <strong>New profile</strong>
+                        </div>
+
+                        <div class="special-reward-item">
+                            <img src="Unlimited-ed.png" alt="Unlimited-ed">
+                            <strong>Limited Edition Module</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button class="finish-button"
+                    onclick="goToRewards()">
+                    🎒 VIEW MY NEW REWARDS
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================================
+         SCRIPTS
+    ====================================================== -->
+
+    <script src="gameProgress.js"></script>
+    <script src="level3script.js"></script>
+
+</body>
+
+</html>
