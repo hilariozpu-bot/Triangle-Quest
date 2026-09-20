@@ -55,7 +55,7 @@ const items = {
         description: "Watch the triangle similarity video you unlock from the shop.",
         image: "",
         /* Paste your video link between the quotes. */
-        link: ""
+        link: "https://www.youtube.com/watch?v=K8WiEdwP-fY"
     },
 
     VIDEO2: {
@@ -64,7 +64,7 @@ const items = {
         description: "Watch your second triangle similarity video lesson.",
         image: "",
         /* Paste your second video link between the quotes. */
-        link: ""
+        link: "https://www.youtube.com/watch?v=VXlFEilh-cw"
     }
 };
 
