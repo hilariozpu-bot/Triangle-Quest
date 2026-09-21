@@ -1,346 +1,423 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Triangle Quest</title>
+```
+<title>Triangle Quest</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
+```
+
 </head>
-
 
 <body>
 
-    <!-- =====================================================
-         TOP BAR
-    ====================================================== -->
+```
+<!-- =====================================================
+     TOP BAR
+====================================================== -->
 
-    <header class="top-bar">
+<header class="top-bar">
 
-        <div class="game-title">
+    <div class="game-title">
 
-            <img src="logo.png" alt="Triangle Quest Logo">
+        <img src="logo.png" alt="Triangle Quest Logo">
 
-            <span>
-                Triangle Quest
+        <span>
+            Triangle Quest
+        </span>
+
+    </div>
+
+
+    <div class="player-info">
+
+        <!-- LEVEL -->
+        <div class="stat">
+
+            <span class="stat-label">
+                LEVEL
+            </span>
+
+            <span id="playerLevel">
+                1
             </span>
 
         </div>
 
 
-        <div class="player-info">
+        <!-- COINS -->
+        <div class="stat coins-display">
 
-            <!-- LEVEL -->
-            <div class="stat">
+            <img src="coins.png" alt="Coins">
 
-                <span class="stat-label">
-                    LEVEL
-                </span>
+            <span id="coinAmount">
+                100
+            </span>
 
-                <span id="playerLevel">
-                    1
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     MAIN CONTENT
+====================================================== -->
+
+<main class="home">
+
+
+    <!-- =================================================
+         WELCOME
+    ================================================== -->
+
+    <section class="welcome">
+
+        <div>
+
+            <p class="small-title">
+                WELCOME, ADVENTURER!
+            </p>
+
+
+            <h1>
+                Ready for your<br>
+                <span>Triangle Quest?</span>
+            </h1>
+
+
+            <p>
+                Explore, learn, and master the secrets
+                of triangle similarity!
+            </p>
+
+
+            <!-- START LEVEL 1 -->
+            <a
+                href="level1.html"
+                class="start-button">
+                START QUEST
+            </a>
+
+        </div>
+
+
+        <div class="welcome-image">
+
+            <img
+                src="adventure.png"
+                alt="Triangle Adventure">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         PLAYER DASHBOARD
+    ================================================== -->
+
+    <section class="dashboard">
+
+
+        <!-- =================================================
+             PLAYER CARD
+        ================================================== -->
+
+        <div class="card player-card">
+
+            <div class="card-title">
+
+                <span>
+                    PLAYER
                 </span>
 
             </div>
 
 
-            <!-- COINS -->
-            <div class="stat coins-display">
+            <div class="player-content">
 
-                <img src="coins.png" alt="Coins">
+                <div class="character-circle">
 
-                <span id="coinAmount">
-                    100
-                </span>
+                    <img
+                        src="player.png"
+                        alt="Player character"
+                        class="character">
+
+                </div>
+
+
+                <h2>
+                    Adventurer
+                </h2>
+
+
+                <p class="level-text">
+
+                    LEVEL
+                    <span id="playerLevel2">
+                        1
+                    </span>
+
+                </p>
+
+
+
+                <!-- XP BAR -->
+
+                <div class="xp-container">
+
+                    <div class="xp-label">
+
+                        <span>
+                            XP
+                        </span>
+
+                        <span>
+
+                            <span id="xpAmount">
+                                0
+                            </span>
+
+                            / 100
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="xp-bar">
+
+                        <div
+                            id="xpProgress"
+                            class="xp-progress">
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 
         </div>
 
-    </header>
-
-
-
-    <!-- =====================================================
-         MAIN CONTENT
-    ====================================================== -->
-
-    <main class="home">
 
 
         <!-- =================================================
-             WELCOME
+             SHOP
         ================================================== -->
 
-        <section class="welcome">
+        <a
+            href="shop.html"
+            class="card menu-card">
+
+            <div class="menu-image">
+
+                <img
+                    src="shop.png"
+                    alt="Shop">
+
+            </div>
+
+
+            <div>
+
+                <h2>
+                    SHOP
+                </h2>
+
+                <p>
+                    Buy learning materials
+                </p>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- =================================================
+             ITEMS
+        ================================================== -->
+
+        <a
+            href="items.html"
+            class="card menu-card">
+
+            <div class="menu-image">
+
+                <img
+                    src="items.png"
+                    alt="Items">
+
+            </div>
+
+
+            <div>
+
+                <h2>
+                    ITEMS
+                </h2>
+
+                <p>
+                    View your materials
+                </p>
+
+            </div>
+
+        </a>
+
+
+
+        <!-- =================================================
+             COINS
+        ================================================== -->
+
+        <div class="card menu-card coin-card">
+
+            <div class="menu-image">
+
+                <img
+                    src="coins.png"
+                    alt="Coins">
+
+            </div>
+
+
+            <div>
+
+                <h2>
+                    COINS
+                </h2>
+
+                <p>
+
+                    <span id="coinAmount2">
+                        100
+                    </span>
+
+                    coins
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         QUESTS
+    ================================================== -->
+
+    <section class="quests-section">
+
+
+        <!-- SECTION HEADING -->
+
+        <div class="section-heading">
 
             <div>
 
                 <p class="small-title">
-                    WELCOME, ADVENTURER!
+                    YOUR JOURNEY
                 </p>
 
-
-                <h1>
-                    Ready for your<br>
-                    <span>Triangle Quest?</span>
-                </h1>
-
-
-                <p>
-                    Explore, learn, and master the secrets
-                    of triangle similarity!
-                </p>
-
-
-                <!-- START LEVEL 1 -->
-                <a
-                    href="level1.html"
-                    class="start-button">
-                    START QUEST
-                </a>
+                <h2>
+                    QUESTS
+                </h2>
 
             </div>
 
 
-            <div class="welcome-image">
+            <a
+                href="quests.html"
+                class="view-all">
 
-                <img
-                    src="adventure.png"
-                    alt="Triangle Adventure">
+                VIEW ALL →
 
-            </div>
+            </a>
 
-        </section>
+        </div>
 
 
 
         <!-- =================================================
-             PLAYER DASHBOARD
+             QUEST LIST
         ================================================== -->
 
-        <section class="dashboard">
+        <div class="quest-list">
 
 
             <!-- =================================================
-                 PLAYER CARD
+                 RESTART PROGRESS
             ================================================== -->
 
-            <div class="card player-card">
+            <button
+                type="button"
+                onclick="restartProgress()">
 
-                <div class="card-title">
+                Restart Progress
 
-                    <span>
-                        PLAYER
+            </button>
+
+
+
+            <!-- =================================================
+                 LEVEL 1
+            ================================================== -->
+
+            <div class="quest-card active">
+
+
+                <div class="quest-number">
+                    1
+                </div>
+
+
+                <div class="quest-icon">
+
+                    <img
+                        src="quest.png"
+                        alt="Quest">
+
+                </div>
+
+
+                <div class="quest-information">
+
+                    <span class="quest-level">
+                        LEVEL 1
                     </span>
 
-                </div>
 
+                    <h3>
+                        Triangle Similarity Theorems
+                    </h3>
 
-                <div class="player-content">
-
-                    <div class="character-circle">
-
-                        <img
-                            src="player.png"
-                            alt="Player character"
-                            class="character">
-
-                    </div>
-
-
-                    <h2>
-                        Adventurer
-                    </h2>
-
-
-                    <p class="level-text">
-
-                        LEVEL
-                        <span id="playerLevel2">
-                            1
-                        </span>
-
-                    </p>
-
-
-
-                    <!-- XP BAR -->
-
-                    <div class="xp-container">
-
-                        <div class="xp-label">
-
-                            <span>
-                                XP
-                            </span>
-
-                            <span>
-
-                                <span id="xpAmount">
-                                    0
-                                </span>
-
-                                / 100
-
-                            </span>
-
-                        </div>
-
-
-                        <div class="xp-bar">
-
-                            <div
-                                id="xpProgress"
-                                class="xp-progress">
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- =================================================
-                 SHOP
-            ================================================== -->
-
-            <a
-                href="shop.html"
-                class="card menu-card">
-
-                <div class="menu-image">
-
-                    <img
-                        src="shop.png"
-                        alt="Shop">
-
-                </div>
-
-
-                <div>
-
-                    <h2>
-                        SHOP
-                    </h2>
 
                     <p>
-                        Buy learning materials
+                        Learn the basic theorems of Triangle Similarity.
                     </p>
-
-                </div>
-
-            </a>
-
-
-
-            <!-- =================================================
-                 ITEMS
-            ================================================== -->
-
-            <a
-                href="items.html"
-                class="card menu-card">
-
-                <div class="menu-image">
-
-                    <img
-                        src="items.png"
-                        alt="Items">
-
-                </div>
-
-
-                <div>
-
-                    <h2>
-                        ITEMS
-                    </h2>
-
-                    <p>
-                        View your materials
-                    </p>
-
-                </div>
-
-            </a>
-
-
-
-            <!-- =================================================
-                 COINS
-            ================================================== -->
-
-            <div class="card menu-card coin-card">
-
-                <div class="menu-image">
-
-                    <img
-                        src="coins.png"
-                        alt="Coins">
-
-                </div>
-
-
-                <div>
-
-                    <h2>
-                        COINS
-                    </h2>
-
-                    <p>
-
-                        <span id="coinAmount2">
-                            100
-                        </span>
-
-                        coins
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             QUESTS
-        ================================================== -->
-
-        <section class="quests-section">
-
-
-            <!-- SECTION HEADING -->
-
-            <div class="section-heading">
-
-                <div>
-
-                    <p class="small-title">
-                        YOUR JOURNEY
-                    </p>
-
-                    <h2>
-                        QUESTS
-                    </h2>
 
                 </div>
 
 
                 <a
-                    href="quests.html"
-                    class="view-all">
+                    href="level1.html"
+                    class="quest-button">
 
-                    VIEW ALL →
+                    PLAY
 
                 </a>
 
@@ -349,250 +426,179 @@
 
 
             <!-- =================================================
-                 QUEST LIST
-            ================================================== -->
+                 LEVEL 2
+            ================================================= -->
 
-            <div class="quest-list">
+            <div class="quest-card locked level2">
 
+                <div class="quest-number">
+                    2
+                </div>
 
-                <!-- =================================================
-                     RESTART PROGRESS
-                ================================================== -->
+                <div class="quest-icon">
 
-                <button
-                    type="button"
-                    onclick="restartProgress()">
-
-                    Restart Progress
-
-                </button>
-
-
-
-                <!-- =================================================
-                     LEVEL 1
-                ================================================== -->
-
-                <div class="quest-card active">
-
-
-                    <div class="quest-number">
-                        1
-                    </div>
-
-
-                    <div class="quest-icon">
-
-                        <img
-                            src="quest.png"
-                            alt="Quest">
-
-                    </div>
-
-
-                    <div class="quest-information">
-
-                        <span class="quest-level">
-                            LEVEL 1
-                        </span>
-
-
-                        <h3>
-                            Theorems &amp; Postulates
-                        </h3>
-
-
-                        <p>
-                            Learn the basic theorems of Triangle Similarity.
-                        </p>
-
-                    </div>
-
-
-                    <a
-                        href="level1.html"
-                        class="quest-button">
-
-                        PLAY
-
-                    </a>
+                    <img
+                        src="quest.png"
+                        alt="Quest">
 
                 </div>
 
+                <div class="quest-information">
 
+                    <span class="quest-level">
+                        LEVEL 2
+                    </span>
 
-                 <!-- =================================================
-                    LEVEL 2
-                ================================================= -->
+                    <h3>
+                        Triangle Figures
+                    </h3>
 
-                <div class="quest-card locked level2">
-
-                    <div class="quest-number">
-                        2
-                    </div>
-
-                    <div class="quest-icon">
-
-                        <img
-                            src="quest.png"
-                            alt="Quest">
-
-                    </div>
-
-                    <div class="quest-information">
-
-                        <span class="quest-level">
-                            LEVEL 2
-                        </span>
-
-                        <h3>
-                            Triangle Figures
-                        </h3>
-
-                        <p>
-                            Apply Triangle Similarity theorems to different figures.
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="level2.html"
-                        class="quest-button">
-
-                        START
-
-                    </a>
+                    <p>
+                        Apply Triangle Similarity Theorems to different figures.
+                    </p>
 
                 </div>
 
+                <a
+                    href="level2.html"
+                    class="quest-button">
 
-                <!-- =================================================
-                     LEVEL 3
-                ================================================== -->
+                    START
 
-                <div class="quest-card locked level3">
-
-
-                    <div class="quest-number">
-                        3
-                    </div>
-
-
-                    <div class="quest-icon">
-
-                        <img
-                            src="quest.png"
-                            alt="Quest">
-
-                    </div>
-
-
-                    <div class="quest-information">
-
-                        <span class="quest-level">
-                            LEVEL 3
-                        </span>
-
-
-                        <h3>
-                            Two-Column Proof
-                        </h3>
-
-
-                        <p>
-                            Solve triangle similarity problems
-                            using two-column proofs.
-                        </p>
-
-                    </div>
-
-
-                    <a
-                        href="level3.html"
-                        class="quest-button">
-
-                        START
-
-                    </a>
-
-                </div>
-
+                </a>
 
             </div>
 
-        </section>
+
+            <!-- =================================================
+                 LEVEL 3
+            ================================================== -->
+
+            <div class="quest-card locked level3">
 
 
-
-        <!-- =================================================
-             CP BAR
-        ================================================== -->
-
-        <section class="cp-section">
+                <div class="quest-number">
+                    3
+                </div>
 
 
-            <div class="cp-header">
+                <div class="quest-icon">
 
-
-                <div>
-
-                    <span class="cp-title">
-                        Triangular Power
-                    </span>
-
-
-                    <h2>
-                        TP
-                    </h2>
+                    <img
+                        src="quest.png"
+                        alt="Quest">
 
                 </div>
 
 
-                <span id="cpAmount">
-                    0 / 100 TP
+                <div class="quest-information">
+
+                    <span class="quest-level">
+                        LEVEL 3
+                    </span>
+
+
+                    <h3>
+                        Two-Column Proof
+                    </h3>
+
+
+                    <p>
+                        Solve triangle similarity problems
+                        using two-column proofs.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="level3.html"
+                    class="quest-button">
+
+                    START
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         TP BAR
+    ================================================== -->
+
+    <section class="cp-section">
+
+
+        <div class="cp-header">
+
+
+            <div>
+
+                <span class="cp-title">
+                    Triangular Power
                 </span>
 
-            </div>
 
-
-
-            <!-- CP PROGRESS BAR -->
-
-            <div class="cp-bar">
-
-                <div
-                    id="cpProgress"
-                    class="cp-progress">
-                </div>
+                <h2>
+                    TP
+                </h2>
 
             </div>
 
 
-            <p>
-                Complete quests to increase your
-                Triangular Power!
-            </p>
+            <span id="cpAmount">
+                0 / 100 TP
+            </span>
 
-        </section>
-
-
-    </main>
+        </div>
 
 
 
-    <!-- =====================================================
-         JAVASCRIPT
-         
-         IMPORTANT:
-         index.html ONLY loads:
-         
-         1. script.js
-         2. gameProgress.js
-         
-         DO NOT load level1script.js here.
-    ====================================================== -->
-    <script src="script.js"></script>
-    <script src="gameProgress.js"></script>
+        <!-- TP PROGRESS BAR -->
+
+        <div class="cp-bar">
+
+            <div
+                id="cpProgress"
+                class="cp-progress">
+            </div>
+
+        </div>
+
+
+        <p>
+            Complete quests to increase your
+            Triangular Power!
+        </p>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+     
+     IMPORTANT:
+     index.html ONLY loads:
+     
+     1. script.js
+     2. gameProgress.js
+     
+     DO NOT load level1script.js here.
+====================================================== -->
+
+<script src="script.js"></script>
+<script src="gameProgress.js"></script>
+```
 
 </body>
 
