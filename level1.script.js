@@ -233,8 +233,8 @@ const practiceQuestions = {
         },
 
         {
-            question: "What is the length of the longer leg?",
-            answer: "14"
+            question: "What is the length of the longer leg? (do not use decimal)",
+            answer: "8√3"
         }
     ],
 
