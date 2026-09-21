@@ -1,736 +1,734 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
 
+    <meta charset="UTF-8">
 
-<meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+    <title>Triangle Quest - Level 2</title>
 
-<title>Triangle Quest - Level 2</title>
-
-<link
-    rel="stylesheet"
-    href="level2style.css"
->
-
+    <link
+        rel="stylesheet"
+        href="level2style.css"
+    >
 
 </head>
+
 
 <body>
 
 
-<!-- =====================================================
-     TOP BAR
-====================================================== -->
+    <!-- =====================================================
+         TOP BAR
+    ====================================================== -->
 
-<header class="top-bar">
+    <header class="top-bar">
 
-    <div class="game-title">
-
-        <img
-            src="logo.png"
-            alt="Triangle Quest Logo"
-        >
-
-        <div>
-
-            <span>
-                TRIANGLE QUEST
-            </span>
-
-            <small>
-                LEVEL 2
-            </small>
-
-        </div>
-
-    </div>
-
-
-    <div class="player-stats">
-
-        <div class="stat">
-
-            <span class="stat-label">
-                LEVEL
-            </span>
-
-            <span id="playerLevel">
-                2
-            </span>
-
-        </div>
-
-
-        <div class="stat coin-stat">
+        <div class="game-title">
 
             <img
-                src="coins.png"
-                alt="Coins"
+                src="logo.png"
+                alt="Triangle Quest Logo"
             >
-
-            <span id="coinAmount">
-                100
-            </span>
-
-        </div>
-
-
-        <div class="stat">
-
-            <span class="stat-label">
-                XP
-            </span>
-
-            <span id="xpAmount">
-                0
-            </span>
-
-        </div>
-
-    </div>
-
-</header>
-
-
-
-<!-- =====================================================
-     LEVEL TITLE
-====================================================== -->
-
-<section class="level-header">
-
-    <div>
-
-        <p class="small-title">
-            LEVEL 2
-        </p>
-
-        <h1>
-            Triangle Figures
-        </h1>
-
-        <p>
-            Review the five triangle similarity topics,
-            match figures to the correct theorem,
-            and complete the final quiz.
-        </p>
-
-    </div>
-
-
-    <div class="level-badge">
-
-        <span>
-            LEVEL
-        </span>
-
-        <strong>
-            2
-        </strong>
-
-    </div>
-
-</section>
-
-
-
-<!-- =====================================================
-     STAGE NAVIGATION
-====================================================== -->
-
-<nav class="stage-navigation">
-
-    <button
-        class="stage-button active"
-        id="stageButton1"
-        onclick="goToStage(1)"
-    >
-
-        <span>
-            1
-        </span>
-
-        <div>
-
-            <strong>
-                RECAP
-            </strong>
-
-            <small>
-                Review
-            </small>
-
-        </div>
-
-    </button>
-
-
-    <div class="stage-line"></div>
-
-
-    <button
-        class="stage-button locked"
-        id="stageButton2"
-        onclick="goToStage(2)"
-    >
-
-        <span>
-            2
-        </span>
-
-        <div>
-
-            <strong>
-                MATCHING
-            </strong>
-
-            <small>
-                Identify
-            </small>
-
-        </div>
-
-    </button>
-
-
-    <div class="stage-line"></div>
-
-
-    <button
-        class="stage-button locked"
-        id="stageButton3"
-        onclick="goToStage(3)"
-    >
-
-        <span>
-            3
-        </span>
-
-        <div>
-
-            <strong>
-                QUIZ
-            </strong>
-
-            <small>
-                5 Questions
-            </small>
-
-        </div>
-
-    </button>
-
-</nav>
-
-
-
-<!-- =====================================================
-     MAIN CONTENT
-====================================================== -->
-
-<main class="level-content">
-
-
-    <!-- =================================================
-         STAGE 1
-    ================================================== -->
-
-    <section
-        id="stage1"
-        class="stage active"
-    >
-
-        <div class="stage-heading">
-
-            <div>
-
-                <span class="stage-number">
-                    STAGE 1
-                </span>
-
-                <h2>
-                    Triangle Similarity Theorems Recap
-                </h2>
-
-                <p>
-                    Review the five topics before
-                    identifying them in figures.
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="topic-grid">
-
-
-            <!-- SSS -->
-
-            <article class="topic-card">
-
-                <div class="topic-number">
-                    01
-                </div>
-
-                <h3>
-                    SSS Similarity
-                </h3>
-
-                <div class="triangle-display">
-
-                    <div class="triangle">
-
-                        <span class="vertex a">
-                            A
-                        </span>
-
-                        <span class="vertex b">
-                            B
-                        </span>
-
-                        <span class="vertex c">
-                            C
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <p>
-                    Two triangles are similar when the
-                    three pairs of corresponding sides
-                    are proportional.
-                </p>
-
-                <div class="formula">
-                    AB/DE = BC/EF = AC/DF
-                </div>
-
-                <span class="topic-tag">
-                    THREE SIDES
-                </span>
-
-            </article>
-
-
-
-            <!-- AA -->
-
-            <article class="topic-card">
-
-                <div class="topic-number">
-                    02
-                </div>
-
-                <h3>
-                    AA Similarity
-                </h3>
-
-                <div class="triangle-display">
-
-                    <div class="triangle triangle-aa">
-
-                        <span class="angle-mark">
-                            60°
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <p>
-                    Two triangles are similar when two
-                    pairs of corresponding angles are
-                    congruent.
-                </p>
-
-                <div class="formula">
-                    ∠A = ∠D and ∠B = ∠E
-                </div>
-
-                <span class="topic-tag">
-                    TWO ANGLES
-                </span>
-
-            </article>
-
-
-
-            <!-- SAS -->
-
-            <article class="topic-card">
-
-                <div class="topic-number">
-                    03
-                </div>
-
-                <h3>
-                    SAS Similarity
-                </h3>
-
-                <div class="triangle-display">
-
-                    <div class="triangle triangle-sas">
-
-                        <span class="side-mark">
-                            5
-                        </span>
-
-                        <span class="side-mark second">
-                            10
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <p>
-                    Two triangles are similar when two
-                    pairs of corresponding sides are
-                    proportional and their included angles
-                    are congruent.
-                </p>
-
-                <div class="formula">
-                    AB/DE = AC/DF and ∠A = ∠D
-                </div>
-
-                <span class="topic-tag">
-                    TWO SIDES + ANGLE
-                </span>
-
-            </article>
-
-
-
-            <!-- RTS -->
-
-            <article class="topic-card">
-
-                <div class="topic-number">
-                    04
-                </div>
-
-                <h3>
-                    Right Triangle Similarity
-                </h3>
-
-                <div class="triangle-display">
-
-                    <div class="right-triangle">
-
-                        <span>
-                            90°
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <p>
-                    A right triangle can be divided into
-                    two smaller right triangles that are
-                    similar to the original triangle.
-                </p>
-
-                <div class="formula">
-                    Right triangles share corresponding
-                    angle relationships.
-                </div>
-
-                <span class="topic-tag">
-                    RIGHT TRIANGLES
-                </span>
-
-            </article>
-
-
-
-            <!-- SRT -->
-
-            <article class="topic-card">
-
-                <div class="topic-number">
-                    05
-                </div>
-
-                <h3>
-                    Special Right Triangles
-                </h3>
-
-                <div class="triangle-display">
-
-                    <div class="special-triangle">
-
-                        <span>
-                            45°
-                        </span>
-
-                        <span>
-                            45°
-                        </span>
-
-                    </div>
-
-                </div>
-
-                <p>
-                    Special right triangles use known side
-                    relationships to find missing lengths.
-                </p>
-
-                <div class="formula">
-                    45°-45°-90° → x, x, x√2
-                </div>
-
-                <span class="topic-tag">
-                    45°-45°-90°
-                </span>
-
-            </article>
-
-        </div>
-
-
-
-        <div class="stage-action">
-
-            <button
-                class="primary-button"
-                onclick="completeStage1()"
-            >
-                I'VE FINISHED THE RECAP →
-            </button>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         STAGE 2
-    ================================================== -->
-
-    <section
-        id="stage2"
-        class="stage"
-    >
-
-        <div class="stage-heading">
-
-            <div>
-
-                <span class="stage-number">
-                    STAGE 2
-                </span>
-
-                <h2>
-                    Match the Figure
-                </h2>
-
-                <p>
-                    Look at each figure and choose the
-                    similarity theorem that matches it.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div
-            id="matchingContainer"
-            class="matching-container"
-        >
-
-        </div>
-
-
-        <div class="stage-action">
-
-            <button
-                id="matchingButton"
-                class="primary-button"
-                onclick="checkMatching()"
-            >
-                CHECK ANSWERS
-            </button>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         STAGE 3
-    ================================================== -->
-
-    <section
-        id="stage3"
-        class="stage"
-    >
-
-        <div class="stage-heading">
-
-            <div>
-
-                <span class="stage-number">
-                    STAGE 3
-                </span>
-
-                <h2>
-                    Final Quiz
-                </h2>
-
-                <p>
-                    Answer all five questions to complete
-                    Level 2.
-                </p>
-
-            </div>
-
-            <div class="quiz-count">
-
-                <span id="quizScore">
-                    0
-                </span>
-
-                / 5
-
-            </div>
-
-        </div>
-
-
-        <div
-            id="quizContainer"
-            class="quiz-container"
-        >
-
-        </div>
-
-
-        <div class="stage-action">
-
-            <button
-                id="quizButton"
-                class="primary-button"
-                onclick="submitQuiz()"
-            >
-                SUBMIT QUIZ
-            </button>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         LEVEL COMPLETE
-    ================================================== -->
-
-    <section
-        id="levelComplete"
-        class="level-complete"
-    >
-
-        <div class="trophy">
-            🏆
-        </div>
-
-        <p class="small-title">
-            QUEST COMPLETE
-        </p>
-
-        <h2>
-            LEVEL 2 COMPLETE!
-        </h2>
-
-        <p>
-            Amazing work! You successfully reviewed
-            and identified the five triangle topics.
-        </p>
-
-
-        <div class="reward-box">
 
             <div>
 
                 <span>
-                    COINS
+                    TRIANGLE QUEST
                 </span>
 
-                <strong>
-                    +50 🪙
-                </strong>
+                <small>
+                    LEVEL 2
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div class="player-stats">
+
+            <div class="stat">
+
+                <span class="stat-label">
+                    LEVEL
+                </span>
+
+                <span id="playerLevel">
+                    2
+                </span>
 
             </div>
 
 
-            <div>
+            <div class="stat coin-stat">
 
-                <span>
+                <img
+                    src="coins.png"
+                    alt="Coins"
+                >
+
+                <span id="coinAmount">
+                    100
+                </span>
+
+            </div>
+
+
+            <div class="stat">
+
+                <span class="stat-label">
                     XP
                 </span>
 
-                <strong>
-                    +50
-                </strong>
-
-            </div>
-
-
-            <div>
-
-                <span>
-                    CP
+                <span id="xpAmount">
+                    0
                 </span>
-
-                <strong>
-                    +50
-                </strong>
 
             </div>
 
         </div>
 
+    </header>
 
-        <button
-            class="primary-button"
-            onclick="finishLevel2()"
-        >
-            CONTINUE TO LEVEL 3 →
-        </button>
+
+
+    <!-- =====================================================
+         LEVEL TITLE
+    ====================================================== -->
+
+    <section class="level-header">
+
+        <div>
+
+            <p class="small-title">
+                LEVEL 2
+            </p>
+
+            <h1>
+                Triangle Figures
+            </h1>
+
+            <p>
+                Review the five triangle similarity topics,
+                match figures to the correct theorem,
+                and complete the final quiz.
+            </p>
+
+        </div>
+
+
+        <div class="level-badge">
+
+            <span>
+                LEVEL
+            </span>
+
+            <strong>
+                2
+            </strong>
+
+        </div>
 
     </section>
 
-</main>
+
+
+    <!-- =====================================================
+         STAGE NAVIGATION
+    ====================================================== -->
+
+    <nav class="stage-navigation">
+
+        <button
+            class="stage-button active"
+            id="stageButton1"
+            onclick="goToStage(1)"
+        >
+
+            <span>
+                1
+            </span>
+
+            <div>
+
+                <strong>
+                    RECAP
+                </strong>
+
+                <small>
+                    Review
+                </small>
+
+            </div>
+
+        </button>
+
+
+        <div class="stage-line"></div>
+
+
+        <button
+            class="stage-button locked"
+            id="stageButton2"
+            onclick="goToStage(2)"
+        >
+
+            <span>
+                2
+            </span>
+
+            <div>
+
+                <strong>
+                    MATCHING
+                </strong>
+
+                <small>
+                    Identify
+                </small>
+
+            </div>
+
+        </button>
+
+
+        <div class="stage-line"></div>
+
+
+        <button
+            class="stage-button locked"
+            id="stageButton3"
+            onclick="goToStage(3)"
+        >
+
+            <span>
+                3
+            </span>
+
+            <div>
+
+                <strong>
+                    QUIZ
+                </strong>
+
+                <small>
+                    5 Questions
+                </small>
+
+            </div>
+
+        </button>
+
+    </nav>
 
 
 
-<!-- =====================================================
-     ONLY LEVEL 2 SCRIPT
-     
-     IMPORTANT:
-     gameProgress.js was removed to prevent duplicate
-     playerData/function conflicts.
-====================================================== -->
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
 
-<script src="level2script.js"></script>
-```
+    <main class="level-content">
+
+
+        <!-- =================================================
+             STAGE 1
+        ================================================== -->
+
+        <section
+            id="stage1"
+            class="stage active"
+        >
+
+            <div class="stage-heading">
+
+                <div>
+
+                    <span class="stage-number">
+                        STAGE 1
+                    </span>
+
+                    <h2>
+                        Theorem Recap
+                    </h2>
+
+                    <p>
+                        Review the five topics before
+                        identifying them in figures.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="topic-grid">
+
+
+                <!-- SSS -->
+
+                <article class="topic-card">
+
+                    <div class="topic-number">
+                        01
+                    </div>
+
+                    <h3>
+                        SSS Similarity
+                    </h3>
+
+                    <div class="triangle-display">
+
+                        <div class="triangle">
+
+                            <span class="vertex a">A</span>
+
+                            <span class="vertex b">B</span>
+
+                            <span class="vertex c">C</span>
+
+                        </div>
+
+                    </div>
+
+                    <p>
+                        Two triangles are similar when the
+                        three pairs of corresponding sides
+                        are proportional.
+                    </p>
+
+                    <div class="formula">
+                        AB/DE = BC/EF = AC/DF
+                    </div>
+
+                    <span class="topic-tag">
+                        THREE SIDES
+                    </span>
+
+                </article>
+
+
+
+                <!-- AA -->
+
+                <article class="topic-card">
+
+                    <div class="topic-number">
+                        02
+                    </div>
+
+                    <h3>
+                        AA Similarity
+                    </h3>
+
+                    <div class="triangle-display">
+
+                        <div class="triangle triangle-aa">
+
+                            <span class="angle-mark">
+                                60°
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <p>
+                        Two triangles are similar when two
+                        pairs of corresponding angles are
+                        congruent.
+                    </p>
+
+                    <div class="formula">
+                        ∠A = ∠D and ∠B = ∠E
+                    </div>
+
+                    <span class="topic-tag">
+                        TWO ANGLES
+                    </span>
+
+                </article>
+
+
+
+                <!-- SAS -->
+
+                <article class="topic-card">
+
+                    <div class="topic-number">
+                        03
+                    </div>
+
+                    <h3>
+                        SAS Similarity
+                    </h3>
+
+                    <div class="triangle-display">
+
+                        <div class="triangle triangle-sas">
+
+                            <span class="side-mark">
+                                5
+                            </span>
+
+                            <span class="side-mark second">
+                                10
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <p>
+                        Two triangles are similar when two
+                        pairs of corresponding sides are
+                        proportional and their included angles
+                        are congruent.
+                    </p>
+
+                    <div class="formula">
+                        AB/DE = AC/DF and ∠A = ∠D
+                    </div>
+
+                    <span class="topic-tag">
+                        TWO SIDES + ANGLE
+                    </span>
+
+                </article>
+
+
+
+                <!-- RTS -->
+
+                <article class="topic-card">
+
+                    <div class="topic-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Right Triangle Similarity
+                    </h3>
+
+                    <div class="triangle-display">
+
+                        <div class="right-triangle">
+
+                            <span>
+                                90°
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <p>
+                        A right triangle can be divided into
+                        two smaller right triangles that are
+                        similar to the original triangle.
+                    </p>
+
+                    <div class="formula">
+                        Right triangles share corresponding
+                        angle relationships.
+                    </div>
+
+                    <span class="topic-tag">
+                        RIGHT TRIANGLES
+                    </span>
+
+                </article>
+
+
+
+                <!-- SRT -->
+
+                <article class="topic-card">
+
+                    <div class="topic-number">
+                        05
+                    </div>
+
+                    <h3>
+                        Special Right Triangles
+                    </h3>
+
+                    <div class="triangle-display">
+
+                        <div class="special-triangle">
+
+                            <span>
+                                45°
+                            </span>
+
+                            <span>
+                                45°
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <p>
+                        Special right triangles use known side
+                        relationships to find missing lengths.
+                    </p>
+
+                    <div class="formula">
+                        45°-45°-90° → x, x, x√2
+                    </div>
+
+                    <span class="topic-tag">
+                        45°-45°-90°
+                    </span>
+
+                </article>
+
+            </div>
+
+
+
+            <div class="stage-action">
+
+                <button
+                    class="primary-button"
+                    onclick="completeStage1()"
+                >
+                    I'VE FINISHED THE RECAP →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             STAGE 2
+        ================================================== -->
+
+        <section
+            id="stage2"
+            class="stage"
+        >
+
+            <div class="stage-heading">
+
+                <div>
+
+                    <span class="stage-number">
+                        STAGE 2
+                    </span>
+
+                    <h2>
+                        Match the Figure
+                    </h2>
+
+                    <p>
+                        Look at each figure and choose the
+                        similarity theorem that matches it.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="matchingContainer"
+                class="matching-container"
+            >
+
+                <!-- Matching questions are created by JavaScript -->
+
+            </div>
+
+
+            <div class="stage-action">
+
+                <button
+                    id="matchingButton"
+                    class="primary-button"
+                    onclick="checkMatching()"
+                >
+                    CHECK ANSWERS
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             STAGE 3
+        ================================================== -->
+
+        <section
+            id="stage3"
+            class="stage"
+        >
+
+            <div class="stage-heading">
+
+                <div>
+
+                    <span class="stage-number">
+                        STAGE 3
+                    </span>
+
+                    <h2>
+                        Final Quiz
+                    </h2>
+
+                    <p>
+                        Answer all five questions to complete
+                        Level 2.
+                    </p>
+
+                </div>
+
+                <div class="quiz-count">
+
+                    <span id="quizScore">
+                        0
+                    </span>
+
+                    /
+                    5
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="quizContainer"
+                class="quiz-container"
+            >
+
+                <!-- Quiz questions are created by JavaScript -->
+
+            </div>
+
+
+            <div class="stage-action">
+
+                <button
+                    id="quizButton"
+                    class="primary-button"
+                    onclick="submitQuiz()"
+                >
+                    SUBMIT QUIZ
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             LEVEL COMPLETE
+        ================================================== -->
+
+        <section
+            id="levelComplete"
+            class="level-complete"
+        >
+
+            <div class="trophy">
+                🏆
+            </div>
+
+            <p class="small-title">
+                QUEST COMPLETE
+            </p>
+
+            <h2>
+                LEVEL 2 COMPLETE!
+            </h2>
+
+            <p>
+                Amazing work! You successfully reviewed
+                and identified the five triangle topics.
+            </p>
+
+
+            <div class="reward-box">
+
+                <div>
+
+                    <span>
+                        COINS
+                    </span>
+
+                    <strong>
+                        +50 🪙
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        XP
+                    </span>
+
+                    <strong>
+                        +50
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        TP
+                    </span>
+
+                    <strong>
+                        +50
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="primary-button"
+                onclick="finishLevel2()"
+            >
+                CONTINUE TO LEVEL 3 →
+            </button>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         SCRIPT
+
+         Level 2 uses ONLY level2script.js.
+         Do NOT load gameProgress.js here.
+    ====================================================== -->
+
+    <script src="level2script.js"></script>
+
 
 </body>
 
 </html>
+```
