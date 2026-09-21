@@ -7,19 +7,31 @@
    PLAYER DATA
 ========================================================= */
 
-let playerData = JSON.parse(
-    localStorage.getItem("triangleQuestPlayer")
-) || {
+let playerData = loadPlayerData();
 
-    level: 1,
+function loadPlayerData() {
+    const defaults = {
+        level: 1,
+        coins: 100,
+        xp: 0,
+        cp: 0
+    };
 
-    coins: 100,
+    try {
+        const saved = localStorage.getItem("triangleQuestPlayer");
+        const data = saved ? JSON.parse(saved) : {};
 
-    xp: 0,
-
-    cp: 0
-
-};
+        return {
+            level: Number.isFinite(Number(data.level)) ? Number(data.level) : defaults.level,
+            coins: Number.isFinite(Number(data.coins)) ? Number(data.coins) : defaults.coins,
+            xp: Number.isFinite(Number(data.xp)) ? Number(data.xp) : defaults.xp,
+            cp: Number.isFinite(Number(data.cp)) ? Number(data.cp) : defaults.cp
+        };
+    } catch (error) {
+        console.error("Could not load player data:", error);
+        return { ...defaults };
+    }
+}
 
 
 /* =========================================================
@@ -43,12 +55,14 @@ if (playerData.level < 2) {
 ========================================================= */
 
 function savePlayerData() {
-
-    localStorage.setItem(
-        "triangleQuestPlayer",
-        JSON.stringify(playerData)
-    );
-
+    try {
+        localStorage.setItem(
+            "triangleQuestPlayer",
+            JSON.stringify(playerData)
+        );
+    } catch (error) {
+        console.error("Could not save player data:", error);
+    }
 }
 
 
@@ -56,21 +70,33 @@ function savePlayerData() {
    LEVEL 2 PROGRESS
 ========================================================= */
 
-let level2Data = JSON.parse(
-    localStorage.getItem("TriangleQuestLevel2")
-) || {
+let level2Data = loadLevel2Data();
 
-    stage1Complete: false,
+function loadLevel2Data() {
+    const defaults = {
+        stage1Complete: false,
+        stage2Complete: false,
+        stage3Complete: false,
+        matchingRewarded: false,
+        quizRewarded: false
+    };
 
-    stage2Complete: false,
+    try {
+        const saved = localStorage.getItem("TriangleQuestLevel2");
+        const data = saved ? JSON.parse(saved) : {};
 
-    stage3Complete: false,
-
-    matchingRewarded: false,
-
-    quizRewarded: false
-
-};
+        return {
+            stage1Complete: data.stage1Complete === true,
+            stage2Complete: data.stage2Complete === true,
+            stage3Complete: data.stage3Complete === true,
+            matchingRewarded: data.matchingRewarded === true,
+            quizRewarded: data.quizRewarded === true
+        };
+    } catch (error) {
+        console.error("Could not load Level 2 progress:", error);
+        return { ...defaults };
+    }
+}
 
 
 /* =========================================================
@@ -78,12 +104,40 @@ let level2Data = JSON.parse(
 ========================================================= */
 
 function saveLevel2Data() {
+    try {
+        localStorage.setItem(
+            "TriangleQuestLevel2",
+            JSON.stringify(level2Data)
+        );
+    } catch (error) {
+        console.error("Could not save Level 2 progress:", error);
+    }
+}
 
-    localStorage.setItem(
-        "TriangleQuestLevel2",
-        JSON.stringify(level2Data)
+
+/* =========================================================
+   REWARD HELPERS
+========================================================= */
+
+function addCoins(amount) {
+    playerData.coins = Math.max(0, Number(playerData.coins || 0) + Number(amount || 0));
+    savePlayerData();
+    updatePlayerStats();
+}
+
+function addXP(amount) {
+    playerData.xp = Math.max(0, Number(playerData.xp || 0) + Number(amount || 0));
+    savePlayerData();
+    updatePlayerStats();
+}
+
+function addCP(amount) {
+    playerData.cp = Math.min(
+        100,
+        Math.max(0, Number(playerData.cp || 0) + Number(amount || 0))
     );
-
+    savePlayerData();
+    updatePlayerStats();
 }
 
 
@@ -305,9 +359,7 @@ function goToStage(stageNumber) {
 function completeStage1() {
 
     level2Data.stage1Complete = true;
-
     saveLevel2Data();
-
     updateStageButtons();
 
 
@@ -622,14 +674,10 @@ function checkMatching() {
 
     if (!level2Data.matchingRewarded) {
 
-        playerData.coins += 10;
-
-        playerData.xp += 10;
+        addCoins(10);
+        addXP(10);
 
         level2Data.matchingRewarded = true;
-
-        savePlayerData();
-
         saveLevel2Data();
 
     }
@@ -1189,16 +1237,11 @@ function submitQuiz() {
 
     if (!level2Data.quizRewarded) {
 
-        playerData.coins += 20;
-
-        playerData.xp += 20;
-
-        playerData.cp += 10;
+        addCoins(20);
+        addXP(20);
+        addCP(10);
 
         level2Data.quizRewarded = true;
-
-        savePlayerData();
-
         saveLevel2Data();
 
     }
@@ -1504,6 +1547,17 @@ function addLevel2SpeechButton() {
     content.insertBefore(button, content.firstElementChild);
 }
 
+
+/* =========================================================
+   PUBLIC BUTTON HANDLERS
+   GitHub Pages / inline onclick compatibility
+========================================================= */
+
+window.goToStage = goToStage;
+window.completeStage1 = completeStage1;
+window.checkMatching = checkMatching;
+window.submitQuiz = submitQuiz;
+window.finishLevel2 = finishLevel2;
 
 /* =========================================================
    START LEVEL 2 WHEN PAGE LOADS
