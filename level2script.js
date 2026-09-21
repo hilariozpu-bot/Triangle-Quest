@@ -327,6 +327,11 @@ function completeStage1() {
    STAGE 2 MATCHING QUESTIONS
 ========================================================= */
 
+/*
+   These are the correct answers for
+   the five Triangle Similarity topics.
+*/
+
 const matchingQuestions = [
 
     {
@@ -425,6 +430,15 @@ const matchingQuestions = [
    CREATE MATCHING QUESTIONS
 ========================================================= */
 
+/*
+   THIS WAS THE PART MISSING FROM YOUR OLD CODE.
+
+   The array above stores the questions.
+
+   This function actually puts the questions
+   inside the HTML matchingContainer.
+*/
+
 function createMatchingQuestions() {
 
     const container =
@@ -433,6 +447,8 @@ function createMatchingQuestions() {
         );
 
 
+    /* Make sure the container exists */
+
     if (!container) {
 
         return;
@@ -440,8 +456,12 @@ function createMatchingQuestions() {
     }
 
 
+    /* Clear the container */
+
     container.innerHTML = "";
 
+
+    /* Create each matching question */
 
     matchingQuestions.forEach(
         function(question) {
@@ -456,11 +476,15 @@ function createMatchingQuestions() {
                 "matching-card";
 
 
+            /* =================================================
+               CREATE OPTIONS
+            ================================================== */
+
             let optionsHTML = "";
 
 
             question.options.forEach(
-                function(option) {
+                function(option, index) {
 
                     optionsHTML += `
 
@@ -483,6 +507,10 @@ function createMatchingQuestions() {
                 }
             );
 
+
+            /* =================================================
+               CREATE CARD
+            ================================================== */
 
             card.innerHTML = `
 
@@ -507,7 +535,7 @@ function createMatchingQuestions() {
 
                     <h3>
                         Which similarity theorem
-                        does this figure represent?
+                        or topic does this figure represent?
                     </h3>
 
 
@@ -521,6 +549,8 @@ function createMatchingQuestions() {
 
             `;
 
+
+            /* Add card to container */
 
             container.appendChild(
                 card
@@ -540,6 +570,10 @@ function checkMatching() {
 
     let score = 0;
 
+
+    /* =====================================================
+       CHECK EACH QUESTION
+    ===================================================== */
 
     matchingQuestions.forEach(
         function(question) {
@@ -627,6 +661,8 @@ function checkMatching() {
     );
 
 
+    /* Go to Stage 3 */
+
     goToStage(3);
 
 }
@@ -649,6 +685,7 @@ const quizQuestions = [
             "In △PQR, PQ = 3, PR = 4, and m∠P = 50°. " +
             "Determine if △ABC ~ △PQR.",
 
+
         options: [
 
             "SSS Similarity",
@@ -660,6 +697,16 @@ const quizQuestions = [
             "Special Right Triangle"
 
         ],
+
+
+        /*
+           Correct answer:
+           SAS Similarity
+
+           9 / 3 = 3
+           12 / 4 = 3
+           Included angles are equal.
+        */
 
         answer: 2
 
@@ -677,6 +724,7 @@ const quizQuestions = [
             "In △STU, m∠S = 62° and m∠T = 70°. " +
             "Determine if △PQR ~ △STU.",
 
+
         options: [
 
             "AA Similarity",
@@ -688,6 +736,12 @@ const quizQuestions = [
             "Special Right Triangle"
 
         ],
+
+
+        /*
+           Correct answer:
+           AA Similarity
+        */
 
         answer: 0
 
@@ -705,6 +759,7 @@ const quizQuestions = [
             "△GHI has sides GH = 12, HI = 15, GI = 21. " +
             "Is △DEF ~ △GHI?",
 
+
         options: [
 
             "SAS Similarity",
@@ -716,6 +771,15 @@ const quizQuestions = [
             "Right Triangle Similarity"
 
         ],
+
+
+        /*
+           4 / 12 = 1 / 3
+           5 / 15 = 1 / 3
+           7 / 21 = 1 / 3
+
+           Therefore SSS Similarity.
+        */
 
         answer: 1
 
@@ -734,6 +798,7 @@ const quizQuestions = [
             "If AD = 5 and DC = 20, find the length of " +
             "altitude BD using the Right Triangle Similarity Theorem.",
 
+
         options: [
 
             "6 m",
@@ -745,6 +810,17 @@ const quizQuestions = [
             "3 m"
 
         ],
+
+
+        /*
+           BD² = AD × DC
+
+           BD² = 5 × 20
+
+           BD² = 100
+
+           BD = 10
+        */
 
         answer: 1
 
@@ -763,6 +839,7 @@ const quizQuestions = [
             "measures 12√2 cm, find the length of each leg. " +
             "(Recall: Hypotenuse = Leg × √2)",
 
+
         options: [
 
             "6 cm",
@@ -774,6 +851,13 @@ const quizQuestions = [
             "24 cm"
 
         ],
+
+
+        /*
+           12√2 = Leg × √2
+
+           Leg = 12 cm
+        */
 
         answer: 2
 
@@ -904,6 +988,10 @@ function selectQuizAnswer(
     ] = optionIndex;
 
 
+    /* =====================================================
+       REMOVE SELECTED STYLE
+    ===================================================== */
+
     const card =
         button.closest(
             ".quiz-card"
@@ -919,17 +1007,13 @@ function selectQuizAnswer(
                 "selected"
             );
 
-            option.classList.remove(
-                "correct"
-            );
-
-            option.classList.remove(
-                "wrong"
-            );
-
         }
     );
 
+
+    /* =====================================================
+       ADD SELECTED STYLE
+    ===================================================== */
 
     button.classList.add(
         "selected"
@@ -949,20 +1033,10 @@ function submitQuiz() {
        CHECK IF ALL QUESTIONS ARE ANSWERED
     ===================================================== */
 
-    const allAnswered =
-        quizQuestions.every(
-            function(question, index) {
-
-                return (
-                    selectedQuizAnswers[index] !==
-                    undefined
-                );
-
-            }
-        );
-
-
-    if (!allAnswered) {
+    if (
+        selectedQuizAnswers.length !==
+        quizQuestions.length
+    ) {
 
         alert(
             "Please answer all 5 questions first."
@@ -1089,7 +1163,9 @@ function submitQuiz() {
         );
 
 
-        /* Allow another attempt */
+        /*
+           Allow another attempt.
+        */
 
         document.querySelectorAll(
             ".quiz-option"
@@ -1097,14 +1173,6 @@ function submitQuiz() {
             function(option) {
 
                 option.disabled = false;
-
-                option.classList.remove(
-                    "correct"
-                );
-
-                option.classList.remove(
-                    "wrong"
-                );
 
             }
         );
@@ -1395,129 +1463,45 @@ function startLevel2() {
 function speakText(text) {
 
     if (!window.speechSynthesis) {
-
-        alert(
-            "Text-to-speech is not supported by this browser."
-        );
-
+        alert("Text-to-speech is not supported by this browser.");
         return;
-
     }
-
 
     window.speechSynthesis.cancel();
 
+    const cleanText = String(text)
+        .replace(/<[^>]*>/g, " ")
+        .replace(/&amp;/g, "&")
+        .replace(/&lt;/g, "<")
+        .replace(/&gt;/g, ">")
+        .replace(/&nbsp;/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
 
-    const cleanText =
-        String(text)
-            .replace(/<[^>]*>/g, " ")
-            .replace(/&amp;/g, "&")
-            .replace(/&lt;/g, "<")
-            .replace(/&gt;/g, ">")
-            .replace(/&nbsp;/g, " ")
-            .replace(/\s+/g, " ")
-            .trim();
+    if (!cleanText) return;
 
-
-    if (!cleanText) {
-
-        return;
-
-    }
-
-
-    const utterance =
-        new SpeechSynthesisUtterance(
-            cleanText
-        );
-
-
+    const utterance = new SpeechSynthesisUtterance(cleanText);
     utterance.rate = 0.9;
-
     utterance.pitch = 1;
-
-
-    window.speechSynthesis.speak(
-        utterance
-    );
-
+    window.speechSynthesis.speak(utterance);
 }
-
-
-/* =========================================================
-   ADD LEVEL 2 SPEECH BUTTON
-========================================================= */
 
 function addLevel2SpeechButton() {
 
-    const content =
-        document.querySelector(
-            ".level-content"
-        );
+    const content = document.querySelector(".level-content");
+    if (!content || document.getElementById("level2SpeechButton")) return;
 
+    const button = document.createElement("button");
+    button.id = "level2SpeechButton";
+    button.type = "button";
+    button.textContent = "🔊 READ ALOUD";
+    button.style.cssText = "margin: 0 0 18px 0; padding: 10px 16px; border: 0; border-radius: 10px; cursor: pointer; font-weight: 700;";
+    button.onclick = function() {
+        const activeStage = document.querySelector(".stage.active");
+        speakText(activeStage ? activeStage.innerText : content.innerText);
+    };
 
-    if (
-        !content ||
-        document.getElementById(
-            "level2SpeechButton"
-        )
-    ) {
-
-        return;
-
-    }
-
-
-    const button =
-        document.createElement(
-            "button"
-        );
-
-
-    button.id =
-        "level2SpeechButton";
-
-
-    button.type =
-        "button";
-
-
-    button.textContent =
-        "🔊 READ ALOUD";
-
-
-    button.style.cssText =
-        "margin: 0 0 18px 0; " +
-        "padding: 10px 16px; " +
-        "border: 0; " +
-        "border-radius: 10px; " +
-        "cursor: pointer; " +
-        "font-weight: 700;";
-
-
-    button.onclick =
-        function() {
-
-            const activeStage =
-                document.querySelector(
-                    ".stage.active"
-                );
-
-
-            speakText(
-                activeStage
-                    ? activeStage.innerText
-                    : content.innerText
-            );
-
-        };
-
-
-    content.insertBefore(
-        button,
-        content.firstElementChild
-    );
-
+    content.insertBefore(button, content.firstElementChild);
 }
 
 
@@ -1530,9 +1514,7 @@ document.addEventListener(
     function() {
 
         startLevel2();
-
         addLevel2SpeechButton();
 
     }
 );
-```
